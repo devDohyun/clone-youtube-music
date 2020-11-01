@@ -1,0 +1,19 @@
+{
+  "name": "youtube_music",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "dot-env": "^0.0.1",
+    "nuxt": "^2.14.7"
+  },
+  "devDependencies": {
+    "sass": "^1.27.0",
+    "sass-loader": "^10.0.4"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start"
+  },
+  "author": "Dohyun Ahn"
+}
