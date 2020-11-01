@@ -8,6 +8,7 @@
                     :key="iIdx"
                     :title="item.title"
                     :desc="item.desc"
+                    :thumb="item.thumb"
                 ></album-item>
             </template>
         </div>

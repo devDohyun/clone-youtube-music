@@ -1,6 +1,9 @@
 <template>
     <div class="album-item">
-        <div class="album-thumb">
+        <div
+            :style="{'background-image': `url(${albumThumb})`}"
+            class="album-thumb"
+        >
             <div class="album-overlay"></div>
         </div>
         <div class="album-title">{{ albumTitle }}</div>
@@ -28,7 +31,11 @@
             padding-bottom: 100%;
 
             background-color: peru;
-            border-radius: 5px;
+            border-radius: 3px;
+
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
 
             overflow: hidden;
             cursor: pointer;
@@ -71,6 +78,7 @@
 export default {
     data () {
         return {
+            albumThumb: this.thumb,
             albumTitle: this.title,
             albumDesc: this.desc
         }
