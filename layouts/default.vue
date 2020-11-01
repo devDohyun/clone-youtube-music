@@ -24,6 +24,7 @@
         height: 100vh;
         background-color: black;
         color: white;
+        font-family: Roboto, Noto Naskh Arabic UI, Arial, sans-serif;
     }
 
     .fade-enter-active, .fade-leave-active {
