@@ -55,6 +55,9 @@
         }
 
         .nav-menu {
+            @media (max-width: $media_md) {
+                display: none;
+            }
             .menu-item {
                 display: inline-block;
 
