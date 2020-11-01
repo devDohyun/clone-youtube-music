@@ -16,9 +16,8 @@
 
         width: 180px;
 
-        &:not(:last-of-type) {
-            margin-right: 15px;
-        }
+        margin-left: 10px;
+        margin-right: 10px;
         
         .album-thumb {
             position: relative;
@@ -46,6 +45,7 @@
             font-size: 14px;
 
             word-break: keep-all;
+            white-space: normal;
             cursor: pointer;
         }
         .album-desc {

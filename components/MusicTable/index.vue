@@ -16,12 +16,21 @@
 
 <style lang="scss" scoped>
     .music-table {
+        &:not(:last-child) {
+            margin-bottom: 125px;
+        }
+
         .table-title {
-            margin-bottom: 35px;
+            margin-bottom: 50px;
             
-            font-size: 24px;
+            font-size: 38px;
             font-weight: 700;
             letter-spacing: 0.35px;
+        }
+
+        .table-items {
+            white-space: nowrap;
+            overflow-x: auto;
         }
     }
 </style>

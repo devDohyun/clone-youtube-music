@@ -12,7 +12,7 @@
         box-sizing: border-box;
     }
     html, body {
-        height: 100%;
+        min-height: 100%;
 
         margin: 0;
         padding: 0;
@@ -21,7 +21,8 @@
         overflow-y: auto;
     }
     #app {
-        height: 100vh;
+        height: 100%;
+        min-height: 100vh;
         background-color: black;
         color: white;
         font-family: Roboto, Noto Naskh Arabic UI, Arial, sans-serif;

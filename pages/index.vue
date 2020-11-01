@@ -1,24 +1,41 @@
 <template>
     <div id="page-index">
-        <template
-            v-for="(table, tableIdx) in tableList"    
-        >
-            <music-table
-                :key="tableIdx"
-                :title="table.title"
-                :items="table.items"
-            ></music-table>
-        </template>
+        <div class="page-container">
+            <template
+                v-for="(table, tableIdx) in tableListComputed"    
+            >
+                <music-table
+                    :key="tableIdx"
+                    :title="table.title"
+                    :items="table.items"
+                ></music-table>
+            </template>
+        </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
+    #page-index {
+        .page-container {
+            width: 95%;
+            max-width: 1200px;
+
+            margin: 0 auto;
+            padding-top: 150px;
+            padding-bottom: 100px;
+        }
+    }
 </style>
 
 <script>
 import MusicTable from '@/components/MusicTable'
 
 export default {
+    head () {
+		return {
+			title: '메인',
+		}
+	},
     components: {
         MusicTable
     },
@@ -46,6 +63,18 @@ export default {
                     ]
                 }
             ]
+        }
+    },
+    computed: {
+        tableListComputed () {
+            let result = []
+
+            // Set mock
+            result = result.concat(...this.tableList)
+            result = result.concat(...this.tableList)
+            result = result.concat(...this.tableList)
+            
+            return result
         }
     }
 }
