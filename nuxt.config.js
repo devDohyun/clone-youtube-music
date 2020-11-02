@@ -1,4 +1,4 @@
-require('dotenv').config({path: '.env'})
+require('dotenv').config({ path: '.env' })
 
 export default {
     server: {
@@ -23,10 +23,25 @@ export default {
     modules: [
         '@nuxtjs/style-resources',
     ],
+    buildModules: [
+        '@nuxtjs/fontawesome',
+    ],
+
 
     styleResources: {
         scss: [
             '~assets/styles/variables.scss'
         ]
+    },
+
+    fontawesome: {
+        component: 'fa',
+        suffix: true,
+  
+        icons: {
+            solid: [
+                
+            ]
+        }
     }
 }
