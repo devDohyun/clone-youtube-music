@@ -40,7 +40,7 @@
         transition-timing-function: ease;
 
         &.nav-background {
-            background-color: #333;
+            background-color: $color_gray1;
         }
 
         .logo {

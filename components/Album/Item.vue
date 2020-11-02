@@ -4,7 +4,9 @@
             :style="{'background-image': `url(${albumThumb})`}"
             class="album-thumb"
         >
-            <div class="album-overlay"></div>
+            <div class="album-overlay">
+                <button type="button"></button>
+            </div>
         </div>
         <div class="album-title">{{ albumTitle }}</div>
         <div class="album-desc">{{ albumDesc }}</div>
@@ -58,7 +60,7 @@
         .album-desc {
             font-size: 14px;
 
-            color: #AAAAAA;
+            color: $color_gray3;
         }
         .album-overlay {
             position: absolute;
@@ -78,12 +80,14 @@
 export default {
     data () {
         return {
+            albumId: this.id,
             albumThumb: this.thumb,
             albumTitle: this.title,
             albumDesc: this.desc
         }
     },
     props: {
+        id: {},
         thumb: {},
         title: {
             required: true

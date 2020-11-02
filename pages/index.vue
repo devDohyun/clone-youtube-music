@@ -46,18 +46,21 @@ export default {
                     title: '즐겨 듣는 음악',
                     items: [
                         {
+                            id: 0,
                             type: 'music',
                             title: '흔들리는 꽃들 속에서 네 샴푸향이 느껴진거야',
                             desc: '노래ㆍ장범준',
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/흔들리는-꽃들-속에서-네-샴푸향이-느껴진거야.jpg'
                         },
                         {
+                            id: 1,
                             type: 'music',
                             title: '스토커',
                             desc: '노래ㆍ10cm(십센치)',
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/스토커.jpg'
                         },
                         {
+                            id: 2,
                             type: 'music',
                             title: '길',
                             desc: '노래ㆍ버스커버스커',

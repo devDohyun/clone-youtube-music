@@ -6,6 +6,7 @@
             <template v-for="(item, iIdx) in tableItems">
                 <album-item
                     :key="iIdx"
+                    :id="item.id"
                     :title="item.title"
                     :desc="item.desc"
                     :thumb="item.thumb"
