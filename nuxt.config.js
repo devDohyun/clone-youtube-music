@@ -40,7 +40,7 @@ export default {
   
         icons: {
             solid: [
-                
+                'faPlay'
             ]
         }
     }
