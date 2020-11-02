@@ -5,7 +5,9 @@
             class="album-thumb"
         >
             <div class="album-overlay">
-                <button type="button"></button>
+                <button @click="addPlaylist" type="button" class="btn-play">
+                    <fa-icon :icon="['fas', 'play']"></fa-icon>
+                </button>
             </div>
         </div>
         <div class="album-title">{{ albumTitle }}</div>
@@ -44,7 +46,7 @@
 
             &:hover {
                 .album-overlay {
-                    opacity: 0.5;
+                    opacity: 1;
                 }
             }
         }
@@ -68,10 +70,40 @@
             width: 100%;
             height: 100%;
 
-            background-color: black;
+            background-color: rgba($color: black, $alpha: 0.35);
             opacity: 0;
 
             transition: opacity 0.2s ease;
+
+            .btn-play {
+                position: absolute;
+                right: 17.5px;
+                bottom: 17.5px;
+
+                display: block;
+                width: 35px;
+                height: 35px;
+                padding: 0;
+
+                border: none;
+                border-radius: 50%;
+                outline: none;
+
+                background-color: rgba($color: black, $alpha: 0.5);
+                color: white;
+
+                font-size: 14px;
+
+                cursor: pointer;
+                transition-property: transform background-color;
+                transition-duration: 0.3s;
+                transition-timing-function: ease;
+
+                &:hover {
+                    transform: scale(1.25);
+                    background-color: rgba($color: black, $alpha: 0.9);
+                }
+            }
         }
     }
 </style>
@@ -93,6 +125,17 @@ export default {
             required: true
         },
         desc: {}
+    },
+    methods: {
+        addPlaylist () {
+            const payload = {
+                id: this.id,
+                thumb: this.thumb,
+                title: this.title,
+                desc: this.desc
+            }
+            this.$store.dispatch('player/addItemsInPlaylist', payload)
+        }
     }
 }
 </script>
