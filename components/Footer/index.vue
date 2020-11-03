@@ -111,9 +111,18 @@
                         display: inline-block;
                         width: calc(100% - 55px);
                         font-size: 14px;
-
+ 
+                        .music-title {
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
                         .music-desc {
                             color: $color_gray3;
+
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
                         }
                     }
                 }
