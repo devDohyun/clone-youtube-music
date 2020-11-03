@@ -40,7 +40,11 @@ export default {
   
         icons: {
             solid: [
-                'faPlay'
+                'faPlay',
+                'faCaretUp',
+                'faCaretDown',
+                'faStepBackward',
+                'faStepForward'
             ]
         }
     }

@@ -4,6 +4,7 @@
         <transition name="fade">
             <nuxt />
         </transition>
+        <default-footer v-if="showFooter"></default-footer>
     </div>
 </template>
 
@@ -37,10 +38,27 @@
 </style>
 
 <script>
+import { mapGetters } from 'vuex'
+
 import DefaultNavigation from '@/components/Navigation'
+import DefaultFooter from '@/components/Footer'
+
 export default {
     components: {
-        DefaultNavigation
+        DefaultNavigation,
+        DefaultFooter
+    },
+    computed: {
+        showFooter () {
+            let result = false
+
+            if (typeof this.current !== 'undefined') result = true
+
+            return result
+        },
+        ...mapGetters({
+            current: 'player/getCurrent'
+        })
     }
 }
 </script>

@@ -5,7 +5,7 @@
             class="album-thumb"
         >
             <div class="album-overlay">
-                <button @click="addPlaylist" type="button" class="btn-play">
+                <button @click="handleAlbumClick" type="button" class="btn-play">
                     <fa-icon :icon="['fas', 'play']"></fa-icon>
                 </button>
             </div>
@@ -127,14 +127,19 @@ export default {
         desc: {}
     },
     methods: {
-        addPlaylist () {
+        async handleAlbumClick () {
+            const index = await this.addPlaylist()
+            this.$store.commit('player/setPlayIndex', index)
+        },
+        async addPlaylist () {
             const payload = {
                 id: this.id,
                 thumb: this.thumb,
                 title: this.title,
                 desc: this.desc
             }
-            this.$store.dispatch('player/addItemsInPlaylist', payload)
+
+            return await this.$store.dispatch('player/addItemsInPlaylist', payload)
         }
     }
 }

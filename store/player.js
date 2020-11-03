@@ -12,7 +12,8 @@ export const getters = {
 }
 
 export const mutations = {
-    addItemInPlaylist: (state, item) => state.playlist.push(item)
+    addItemInPlaylist: (state, item) => state.playlist.push(item),
+    setPlayIndex: (state, index) => state.playIndex = index
 }
 
 export const actions = {
@@ -23,5 +24,7 @@ export const actions = {
 
         // Add after api cache available
         // if (typeof payload === 'string') 
+
+        return state.playlist.length - 1
     }
 }
