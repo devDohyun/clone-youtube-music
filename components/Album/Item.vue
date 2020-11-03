@@ -34,7 +34,7 @@
             margin-bottom: 7.5px;
             padding-bottom: 100%;
 
-            background-color: peru;
+            background-color: $color_gray3;
             border-radius: 3px;
 
             background-repeat: no-repeat;
