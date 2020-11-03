@@ -65,7 +65,14 @@ export default {
                             title: '길',
                             desc: '노래ㆍ버스커버스커',
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/684015_1_f.jpg'
-                        }
+                        },
+                        {
+                            id: 23,
+                            type: 'mix',
+                            title: '속이 뻥 뚫리는 역대급 가창력',
+                            desc: '재생목록ㆍYouTube Music',
+                            thumb: ''
+                        },
                     ]
                 }
             ]
