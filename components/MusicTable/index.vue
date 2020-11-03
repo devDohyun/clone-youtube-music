@@ -7,6 +7,7 @@
                 <album-item
                     :key="iIdx"
                     :id="item.id"
+                    :type="item.type"
                     :title="item.title"
                     :desc="item.desc"
                     :thumb="item.thumb"
