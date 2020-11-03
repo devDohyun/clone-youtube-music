@@ -173,7 +173,8 @@ export default {
             if (this.albumType === 'music') {
                 this.handlePlayClick()
             } else if (this.albumType === 'mix') {
-                this.$router.push('/explore')
+                const target = `/explore/mix/${this.albumId}`
+                this.$router.push(target)
             }
         },
         async handlePlayClick () {
