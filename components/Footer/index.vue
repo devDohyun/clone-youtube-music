@@ -102,6 +102,7 @@
 
                         margin-right: 15px;
 
+                        background-color: $color_gray3;
                         background-position: center;
                         background-repeat: no-repeat;
                         background-size: cover;
