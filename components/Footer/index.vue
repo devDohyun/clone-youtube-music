@@ -37,6 +37,8 @@
 </template>
 <style lang="scss" scoped>
     #footer {
+        z-index: 9;
+        
         position: fixed;
         left: 0;
         bottom: 0;
