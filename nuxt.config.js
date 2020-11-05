@@ -45,7 +45,12 @@ export default {
                 'faCaretUp',
                 'faCaretDown',
                 'faStepBackward',
-                'faStepForward'
+                'faStepForward',
+                'faEllipsisV'
+            ],
+            regular: [
+                'faThumbsUp',
+                'faThumbsDown',
             ]
         }
     }
