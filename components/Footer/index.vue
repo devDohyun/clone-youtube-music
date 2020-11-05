@@ -26,9 +26,14 @@
                         <div class="music-desc">{{ current.desc }}</div>
                     </div>
                 </div>
+                <div class="music-actions">
+                    <button><fa-icon :icon="['far', 'thumbs-down']"></fa-icon></button>
+                    <button><fa-icon :icon="['far', 'thumbs-up']"></fa-icon></button>
+                    <button><fa-icon :icon="['fas', 'ellipsis-v']"></fa-icon></button>
+                </div>
             </div>
             <div class="area-actions">
-                <button type="button">
+                <button type="button" class="btn-caret">
                     <fa-icon :icon="['fas', 'caret-up']" />
                 </button>
             </div>
@@ -76,6 +81,8 @@
 
                         font-size: 14px;
 
+                        cursor: pointer;
+
                         &:not(:last-of-type) {
                             margin-right: 15px;
                         }
@@ -93,6 +100,8 @@
             }
             .area-music-info {
                 .music-info {
+                    vertical-align: middle;
+                    display: inline-block;
                     font-size: 0;
 
                     .music-thumb {
@@ -127,6 +136,51 @@
                             overflow: hidden;
                             text-overflow: ellipsis;
                         }
+                    }
+                }
+                .music-actions {
+                    vertical-align: middle;
+                    display: inline-block;
+                    margin-left: 45px;
+
+                    button {
+                        padding: 0;
+                        
+                        background-color: transparent;
+                        outline: none;
+                        border: none;
+
+                        color: $color_gray3;
+                        font-size: 20px;
+
+                        cursor: pointer;
+
+                        &:not(:last-of-type) {
+                            margin-right: 20px;
+                        }
+                    }
+                }
+            }
+            .area-actions {
+                button {
+                    margin-right: 15px;
+
+                    outline: none;
+                    border: none;
+                    background: none;
+
+                    color: white;
+
+                    font-size: 14px;
+
+                    cursor: pointer;
+
+                    &:not(:first-of-type) {
+                        margin-right: 15px;
+                    }
+
+                    &.btn-caret {
+                        color: white;
                     }
                 }
             }
