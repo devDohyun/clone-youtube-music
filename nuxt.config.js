@@ -30,7 +30,8 @@ export default {
 
     styleResources: {
         scss: [
-            '~assets/styles/variables.scss'
+            '~assets/styles/variables.scss',
+            '~assets/styles/layout.scss'
         ]
     },
 
