@@ -42,6 +42,7 @@ export default {
         icons: {
             solid: [
                 'faPlay',
+                'faPause',
                 'faCaretUp',
                 'faCaretDown',
                 'faStepBackward',
