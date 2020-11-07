@@ -55,7 +55,7 @@
         }
 
         .nav-menu {
-            @media (max-width: $media_md) {
+            @media (max-width: $media_sd) {
                 display: none;
             }
             .menu-item {
