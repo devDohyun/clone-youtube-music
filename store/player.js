@@ -13,7 +13,8 @@ export const getters = {
 
 export const mutations = {
     addItemInPlaylist: (state, item) => state.playlist.push(item),
-    setPlayIndex: (state, index) => state.playIndex = index
+    setPlayIndex: (state, index) => state.playIndex = index,
+    setIsPlaying: (state, boolIsPlaying) => state.isPlaying = boolIsPlaying
 }
 
 export const actions = {

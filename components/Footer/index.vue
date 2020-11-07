@@ -7,8 +7,11 @@
                     <button type="button" class="btn-step-backward">
                         <fa-icon :icon="['fas', 'step-backward']" />
                     </button>
-                    <button type="button" class="btn-play">
+                    <button v-show="isPlaying === false" @click="playMusic" type="button" class="btn-play">
                         <fa-icon :icon="['fas', 'play']" />
+                    </button>
+                    <button v-show="isPlaying" @click="pauseMusic" type="button" class="btn-pause">
+                        <fa-icon :icon="['fas', 'pause']" />
                     </button>
                     <button type="button" class="btn-step-forward">
                         <fa-icon :icon="['fas', 'step-forward']" />
@@ -87,7 +90,7 @@
                             margin-right: 15px;
                         }
 
-                        &.btn-play {
+                        &.btn-play, &.btn-pause {
                             font-size: 24px;
                         }
                     }
@@ -193,8 +196,17 @@ import { mapGetters } from 'vuex'
 export default {
     computed: {
         ...mapGetters({
-            current: 'player/getCurrent'
+            current: 'player/getCurrent',
+            isPlaying: 'player/getIsPlaying'
         })
+    },
+    methods: {
+        playMusic () {
+            this.$store.commit('player/setIsPlaying', true)
+        },
+        pauseMusic () {
+            this.$store.commit('player/setIsPlaying', false)
+        }
     }
 }
 </script>
