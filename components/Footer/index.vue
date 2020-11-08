@@ -92,6 +92,10 @@
 
                         &.btn-play, &.btn-pause {
                             font-size: 24px;
+
+                            @media (max-width: $media_sd) {
+                                display: none;
+                            }
                         }
                     }
                 }
