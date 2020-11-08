@@ -2,19 +2,74 @@
     <div id="page-index">
         <div class="page-container">
             <template
-                v-for="(table, tableIdx) in tableListComputed"    
+                v-for="(content, contentIdx) in contentListTop"    
             >
-                <music-table
-                    :key="tableIdx"
-                    :title="table.title"
-                    :items="table.items"
-                ></music-table>
+                <template v-if="content.type === 'table'">
+                    <music-table
+                        :key="contentIdx"
+                        :title="content.title"
+                        :items="content.items"
+                    ></music-table>
+                </template>
             </template>
+            <div class="announce-set-favorite">
+                <div class="artist-wrapper">
+                    <div
+                        v-for="(item, idx) in 5"
+                        :key="idx"
+                        class="artist-item"
+                    ></div>
+                </div>
+                <div class="text-content">
+                    <div class="text-title">좋아하는 아티스트를 알려주세요.</div>
+                    <div class="text-desc">나만을 위한 맞춤 서비스가 제공됩니다.</div>
+                    <div class="actions">
+                        <button type="button">시작하기</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
+    .announce-set-favorite {
+        font-size: 0;
+
+        .artist-wrapper {
+            display: inline-block;
+            width: calc(100% - 400px);
+
+            @media (max-width: $media_sd) {
+                display: block;
+                width: 100%;
+            }
+        }
+        .text-content {
+            display: inline-block;
+            width: 400px;
+            
+            @media (max-width: $media_sd) {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+            .text-title {
+                font-size: 24px;
+            }
+            .text-desc {
+                font-size: 14px;
+                color: $color_gray3;
+            }
+            .actions {
+                margin-top: 50px;
+                
+                @media (max-width: $media_sd) {
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
 </style>
 
 <script>
@@ -23,7 +78,8 @@ import MusicTable from '@/components/MusicTable'
 export default {
     head () {
 		return {
-			title: '메인',
+            title: '메인',
+            isUserSetFavoriteArtist: false
 		}
 	},
     components: {
@@ -33,6 +89,7 @@ export default {
         return {
             tableList: [
                 {
+                    type: 'table',
                     title: '즐겨 듣는 음악',
                     items: [
                         {
@@ -69,13 +126,14 @@ export default {
         }
     },
     computed: {
-        tableListComputed () {
+        contentListTop () {
             let result = []
 
-            // Set mock
-            result = result.concat(...this.tableList)
-            result = result.concat(...this.tableList)
-            result = result.concat(...this.tableList)
+            result = result.concat(...this.tableList.slice(0, 2))
+
+            if (this.isUserSetFavoriteArtist === false) {
+                result.splice(2, 0, { type: 'setFavoriteArtist' })
+            }
             
             return result
         }
