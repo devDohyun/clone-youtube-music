@@ -18,7 +18,7 @@
                     </button>
                 </div>
                 <div class="current-time">
-                    {{ formTimeString(currentSeconds) }} / {{ '2:20' }}
+                    {{ formTimeString(currentSeconds) }} / {{ formTimeString(currentMusic.playtime) }}
                 </div>
             </div>
             <div class="area-music-info">
@@ -100,6 +100,7 @@
                     }
                 }
                 .current-time {
+                    min-width: 60px;
                     margin-left: 15px;
                     font-size: 12px;
                     color: $color_gray3;
@@ -113,6 +114,7 @@
                 .music-info {
                     vertical-align: middle;
                     display: inline-block;
+                    
                     font-size: 0;
 
                     .music-thumb {
@@ -144,6 +146,8 @@
                         }
  
                         .music-title {
+                            max-width: 200px;
+                            
                             white-space: nowrap;
                             overflow: hidden;
                             text-overflow: ellipsis;
