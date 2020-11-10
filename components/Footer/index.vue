@@ -18,15 +18,15 @@
                     </button>
                 </div>
                 <div class="current-time">
-                    {{ '2:08' }} / {{ '2:20' }}
+                    {{ formTimeString(currentSeconds) }} / {{ '2:20' }}
                 </div>
             </div>
             <div class="area-music-info">
                 <div class="music-info">
-                    <div :style="{ 'background-image': `url(${current.thumb})` }" class="music-thumb"></div>
+                    <div :style="{ 'background-image': `url(${currentMusic.thumb})` }" class="music-thumb"></div>
                     <div class="music-text">
-                        <div class="music-title">{{ current.title }}</div>
-                        <div class="music-desc">{{ current.desc }}</div>
+                        <div class="music-title">{{ currentMusic.title }}</div>
+                        <div class="music-desc">{{ currentMusic.desc }}</div>
                     </div>
                 </div>
                 <div class="music-actions">
@@ -222,13 +222,22 @@ import { mapGetters } from 'vuex'
 export default {
     computed: {
         ...mapGetters({
-            current: 'player/getCurrentMusic',
+            currentSeconds: 'player/getCurrentSeconds',
+            currentMusic: 'player/getCurrentMusic',
             isPlaying: 'player/getIsPlaying'
         })
     },
     methods: {
+        formTimeString (val) {
+            let result = ''
+            result += Math.floor(val / 60)
+            result += ':'
+            result += ('0' + (val % 60)).slice(-2)
+            
+            return result
+        },
         playMusic () {
-            this.$store.commit('player/setIsPlaying', true)
+            this.$store.dispatch('player/playMusic')
         },
         pauseMusic () {
             this.$store.commit('player/setIsPlaying', false)

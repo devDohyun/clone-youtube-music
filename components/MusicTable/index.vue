@@ -10,6 +10,7 @@
                     :type="item.type"
                     :title="item.title"
                     :desc="item.desc"
+                    :playtime="item.playtime"
                     :thumb="item.thumb"
                 ></album-item>
             </template>

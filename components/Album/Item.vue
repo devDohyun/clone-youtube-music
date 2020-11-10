@@ -149,6 +149,7 @@ export default {
             albumType: this.type,
             albumThumb: this.thumb,
             albumTitle: this.title,
+            albumPlaytime: this.playtime,
             albumDesc: this.desc
         }
     },
@@ -164,6 +165,10 @@ export default {
         thumb: {},
         title: {
             type: String,
+            required: true
+        },
+        playtime: {
+            type: Number,
             required: true
         },
         desc: {}
@@ -187,6 +192,7 @@ export default {
                 type: this.type,
                 thumb: this.thumb,
                 title: this.title,
+                playtime: this.playtime,
                 desc: this.desc
             }
 

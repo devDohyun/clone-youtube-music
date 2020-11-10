@@ -97,6 +97,7 @@ export default {
                             type: 'music',
                             title: '흔들리는 꽃들 속에서 네 샴푸향이 느껴진거야',
                             desc: '노래•장범준',
+                            playtime: 168,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/흔들리는-꽃들-속에서-네-샴푸향이-느껴진거야.jpg'
                         },
                         {
@@ -104,6 +105,7 @@ export default {
                             type: 'music',
                             title: '스토커',
                             desc: '노래•10cm(십센치)',
+                            playtime: 255,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/스토커.jpg'
                         },
                         {
@@ -111,6 +113,7 @@ export default {
                             type: 'music',
                             title: '길',
                             desc: '노래•버스커버스커',
+                            playtime: 207,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/684015_1_f.jpg'
                         },
                         {
@@ -118,6 +121,7 @@ export default {
                             type: 'mix',
                             title: '속이 뻥 뚫리는 역대급 가창력',
                             desc: '재생목록•YouTube Music',
+                            playtime: 1000,
                             thumb: ''
                         },
                     ]
