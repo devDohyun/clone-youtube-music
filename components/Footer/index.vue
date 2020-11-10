@@ -1,6 +1,9 @@
 <template>
     <div id="footer">
-        <div class="player-progress"></div>
+        <div
+            :style="{transform: `translateX(-${100 - musicProgress}%)`}"
+            class="player-progress"
+        ></div>
         <div class="area-wrapper">
             <div class="area-player">
                 <div class="actions-wrapper">
@@ -55,6 +58,17 @@
         height: 70px;
 
         background-color: $color_gray1;
+
+        .player-progress {
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            width: 100%;
+            height: 2px;
+
+            background-color: red;
+        }
 
         .area-wrapper {
             display: flex;
@@ -229,7 +243,10 @@ export default {
             currentSeconds: 'player/getCurrentSeconds',
             currentMusic: 'player/getCurrentMusic',
             isPlaying: 'player/getIsPlaying'
-        })
+        }),
+        musicProgress () {
+            return this.currentSeconds / this.currentMusic.playtime * 100
+        }
     },
     methods: {
         formTimeString (val) {
