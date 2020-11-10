@@ -30,8 +30,8 @@
                     </div>
                 </div>
                 <div class="music-actions">
-                    <button><fa-icon :icon="['far', 'thumbs-down']"></fa-icon></button>
-                    <button><fa-icon :icon="['far', 'thumbs-up']"></fa-icon></button>
+                    <button class="btn-unlike"><fa-icon :icon="['far', 'thumbs-down']"></fa-icon></button>
+                    <button class="btn-like"><fa-icon :icon="['far', 'thumbs-up']"></fa-icon></button>
                     <button><fa-icon :icon="['fas', 'ellipsis-v']"></fa-icon></button>
                 </div>
             </div>
@@ -73,9 +73,9 @@
                     justify-content: space-around;
                     align-items: center;
 
+                    padding-left: 15px;
+
                     button {
-                        margin-left: 15px;
-                        
                         outline: none;
                         border: none;
                         background: none;
@@ -88,6 +88,10 @@
 
                         &:not(:last-of-type) {
                             margin-right: 15px;
+
+                            @media screen and (max-width: $media_sd) {
+                                margin-right: 7.5px;
+                            }
                         }
 
                         &.btn-play, &.btn-pause {
@@ -99,6 +103,10 @@
                     margin-left: 15px;
                     font-size: 12px;
                     color: $color_gray3;
+
+                    @media screen and (max-width: $media_sd) {
+                        display: none;
+                    }
                 }
             }
             .area-music-info {
@@ -120,12 +128,20 @@
                         background-position: center;
                         background-repeat: no-repeat;
                         background-size: cover;
+
+                        @media screen and (max-width: $media_sd) {
+                            display: none;
+                        }
                     }
                     .music-text {
                         vertical-align: middle;
                         display: inline-block;
                         width: calc(100% - 55px);
                         font-size: 14px;
+
+                        @media screen and (max-width: $media_sd) {
+                            width: 100%;
+                        }
  
                         .music-title {
                             white-space: nowrap;
@@ -146,6 +162,10 @@
                     display: inline-block;
                     margin-left: 45px;
 
+                    @media screen and (max-width: $media_sd) {
+                        margin-left: 15px;
+                    }
+
                     button {
                         padding: 0;
                         
@@ -160,6 +180,12 @@
 
                         &:not(:last-of-type) {
                             margin-right: 20px;
+                        }
+
+                        &.btn-like, &.btn-unlike {
+                            @media screen and (max-width: $media_sd) {
+                                display: none;
+                            }
                         }
                     }
                 }
