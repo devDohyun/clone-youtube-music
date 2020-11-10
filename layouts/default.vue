@@ -57,7 +57,7 @@ export default {
             return result
         },
         ...mapGetters({
-            current: 'player/getCurrent'
+            current: 'player/getCurrentMusic'
         })
     }
 }

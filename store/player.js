@@ -1,5 +1,6 @@
 export const state = () => ({
     isPlaying: false,
+    currentSeconds: 0,
     playIndex: null,
     playlist: []
 })
@@ -7,7 +8,7 @@ export const state = () => ({
 export const getters = {
     getPlayIndex: state => state.playIndex,
     getIsPlaying: state => state.isPlaying,
-    getCurrent: state => state.playlist[state.playIndex],
+    getCurrentMusic: state => state.playlist[state.playIndex],
     getPlaylist: state => state.playlist
 }
 

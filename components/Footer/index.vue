@@ -222,7 +222,7 @@ import { mapGetters } from 'vuex'
 export default {
     computed: {
         ...mapGetters({
-            current: 'player/getCurrent',
+            current: 'player/getCurrentMusic',
             isPlaying: 'player/getIsPlaying'
         })
     },
