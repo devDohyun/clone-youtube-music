@@ -12,7 +12,7 @@
                     ></music-table>
                 </template>
             </template>
-            <div class="announce-set-favorite">
+            <div class="announce-set-favorite" v-if="false">
                 <div class="artist-wrapper">
                     <div
                         v-for="(item, idx) in 5"
