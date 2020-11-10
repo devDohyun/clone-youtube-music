@@ -244,7 +244,7 @@ export default {
             this.$store.dispatch('player/playMusic')
         },
         pauseMusic () {
-            this.$store.commit('player/setIsPlaying', false)
+            this.$store.dispatch('player/pauseMusic')
         }
     }
 }

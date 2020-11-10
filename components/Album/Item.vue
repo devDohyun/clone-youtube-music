@@ -8,7 +8,7 @@
             class="album-thumb"
         >
             <template v-if="albumType === 'music'">
-                <button @click="handlePlayClick" type="button" class="btn-play-music">
+                <button @click.stop="handlePlayClick" type="button" class="btn-play-music">
                     <fa-icon :icon="['fas', 'play']"></fa-icon>
                 </button>
             </template>
@@ -185,6 +185,7 @@ export default {
         async handlePlayClick () {
             const index = await this.addPlaylist()
             this.$store.commit('player/setPlayIndex', index)
+            this.$store.dispatch('player/playMusic')
         },
         async addPlaylist () {
             const payload = {

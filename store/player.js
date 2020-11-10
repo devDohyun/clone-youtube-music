@@ -34,12 +34,23 @@ export const actions = {
 
         return state.playlist.length - 1
     },
-    playMusic: ({ commit, state }) => {
-        commit('setIsPlaying', true)
+    playMusic: ({ commit, state, getters }) => {
+        // check if playing
+        if (getters.getIsPlaying) {
+            clearInterval(state.playerIntervalId)
+            commit('setPlayerIntervalId', null)
+            commit('setCurrentSeconds', 0)
+        } else commit('setIsPlaying', true)
+
         const intervalId = setInterval(() => {
             commit('setCurrentSeconds', state.currentSeconds + 1)
         }, 1000)
 
         commit('setPlayerIntervalId', intervalId)
+    },
+    pauseMusic: ({ commit, state }) => {
+        clearInterval(state.playerIntervalId)
+        commit('setPlayerIntervalId', null)
+        commit('setIsPlaying', false)
     }
 }
