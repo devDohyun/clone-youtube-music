@@ -44,6 +44,17 @@ export const actions = {
 
         const intervalId = setInterval(() => {
             commit('setCurrentSeconds', state.currentSeconds + 1)
+
+            if (state.currentSeconds > getters.getCurrentMusic.playtime) {
+                if (typeof getters.getPlaylist[getters.getPlayIndex + 1] !== 'undefined') {
+                    commit('setCurrentSeconds', 0)
+                    commit('setPlayIndex', getters.getPlayIndex + 1)
+                } else {
+                    clearInterval(state.playerIntervalId)
+                    commit('setPlayerIntervalId', null)
+                    commit('setIsPlaying', false)
+                }
+            }
         }, 1000)
 
         commit('setPlayerIntervalId', intervalId)
