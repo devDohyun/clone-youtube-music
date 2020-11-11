@@ -64,5 +64,19 @@ export const actions = {
         clearInterval(state.playerIntervalId)
         commit('setPlayerIntervalId', null)
         commit('setIsPlaying', false)
+    },
+    playNextMusic: ({ commit, state, getters, dispatch }) => {
+        let target = getters.getPlayIndex + 1
+        if (target >= getters.getPlaylist.length - 1) target = 0
+        commit('setPlayIndex', target)
+        commit('setCurrentSeconds', 0)
+        dispatch('playMusic')
+    },
+    playPrevMusic: ({ commit, state, getters, dispatch }) => {
+        let target = getters.getPlayIndex - 1
+        if (target <= 0) target = getters.getPlaylist.length - 1
+        commit('setPlayIndex', target)
+        commit('setCurrentSeconds', 0)
+        dispatch('playMusic')
     }
 }

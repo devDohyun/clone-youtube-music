@@ -7,7 +7,7 @@
         <div class="area-wrapper">
             <div class="area-player">
                 <div class="actions-wrapper">
-                    <button type="button" class="btn-step-backward">
+                    <button @click="playPrevMusic" type="button" class="btn-step-backward">
                         <fa-icon :icon="['fas', 'step-backward']" />
                     </button>
                     <button v-show="isPlaying === false" @click="playMusic" type="button" class="btn-play">
@@ -16,7 +16,7 @@
                     <button v-show="isPlaying" @click="pauseMusic" type="button" class="btn-pause">
                         <fa-icon :icon="['fas', 'pause']" />
                     </button>
-                    <button type="button" class="btn-step-forward">
+                    <button @click="playNextMusic" type="button" class="btn-step-forward">
                         <fa-icon :icon="['fas', 'step-forward']" />
                     </button>
                 </div>
@@ -235,7 +235,7 @@
     }
 </style>
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
     computed: {
@@ -257,12 +257,13 @@ export default {
             
             return result
         },
-        playMusic () {
-            this.$store.dispatch('player/playMusic')
-        },
-        pauseMusic () {
-            this.$store.dispatch('player/pauseMusic')
-        }
+        ...mapActions({
+            playMusic: 'player/playMusic',
+            pauseMusic: 'player/pauseMusic',
+            playNextMusic: 'player/playNextMusic',
+            playPrevMusic: 'player/playPrevMusic',
+        })
+        
     }
 }
 </script>
