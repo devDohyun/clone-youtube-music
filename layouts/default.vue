@@ -4,9 +4,7 @@
         <transition name="fade">
             <nuxt />
         </transition>
-        <transition name="nav">
-            <default-footer v-if="showFooter"></default-footer>
-        </transition>
+        <default-footer></default-footer>
     </div>
 </template>
 
@@ -37,17 +35,9 @@
     .fade-enter, .fade-leave-active {
         opacity: 0;
     }
-    .nav-enter-active, .nav-leave-active {
-        transition: transform 0.3s;
-    }
-    .nav-enter, .nav-leave-active {
-        transform: translateY(100%)
-    }
 </style>
 
 <script>
-import { mapGetters } from 'vuex'
-
 import DefaultNavigation from '@/components/Navigation'
 import DefaultFooter from '@/components/Footer'
 
@@ -56,17 +46,5 @@ export default {
         DefaultNavigation,
         DefaultFooter
     },
-    computed: {
-        showFooter () {
-            let result = false
-
-            if (typeof this.current !== 'undefined') result = true
-
-            return result
-        },
-        ...mapGetters({
-            current: 'player/getCurrentMusic'
-        })
-    }
 }
 </script>

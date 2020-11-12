@@ -1,53 +1,57 @@
 <template>
     <div id="footer">
-        <div
-            :style="{transform: `translateX(-${100 - musicProgress}%)`}"
-            class="player-progress"
-        ></div>
-        <div class="area-wrapper">
-            <div class="area-player">
-                <div class="actions-wrapper">
-                    <button @click="playPrevMusic" type="button" class="btn-step-backward">
-                        <fa-icon :icon="['fas', 'step-backward']" />
-                    </button>
-                    <button v-show="isPlaying === false" @click="playMusic" type="button" class="btn-play">
-                        <fa-icon :icon="['fas', 'play']" />
-                    </button>
-                    <button v-show="isPlaying" @click="pauseMusic" type="button" class="btn-pause">
-                        <fa-icon :icon="['fas', 'pause']" />
-                    </button>
-                    <button @click="playNextMusic" type="button" class="btn-step-forward">
-                        <fa-icon :icon="['fas', 'step-forward']" />
-                    </button>
-                </div>
-                <div class="current-time">
-                    {{ formTimeString(currentSeconds) }} / {{ formTimeString(currentMusic.playtime) }}
-                </div>
-            </div>
-            <div class="area-music-info">
-                <div class="music-info">
-                    <div :style="{ 'background-image': `url(${currentMusic.thumb})` }" class="music-thumb"></div>
-                    <div class="music-text">
-                        <div class="music-title">{{ currentMusic.title }}</div>
-                        <div class="music-desc">{{ currentMusic.desc }}</div>
+        <transition name="nav">
+            <div v-if="showFooter" class="footer-player">
+                <div
+                    :style="{transform: `translateX(-${100 - musicProgress}%)`}"
+                    class="player-progress"
+                ></div>
+                <div class="area-wrapper">
+                    <div class="area-player">
+                        <div class="actions-wrapper">
+                            <button @click="playPrevMusic" type="button" class="btn-step-backward">
+                                <fa-icon :icon="['fas', 'step-backward']" />
+                            </button>
+                            <button v-show="isPlaying === false" @click="playMusic" type="button" class="btn-play">
+                                <fa-icon :icon="['fas', 'play']" />
+                            </button>
+                            <button v-show="isPlaying" @click="pauseMusic" type="button" class="btn-pause">
+                                <fa-icon :icon="['fas', 'pause']" />
+                            </button>
+                            <button @click="playNextMusic" type="button" class="btn-step-forward">
+                                <fa-icon :icon="['fas', 'step-forward']" />
+                            </button>
+                        </div>
+                        <div class="current-time">
+                            {{ formTimeString(currentSeconds) }} / {{ formTimeString(currentMusic.playtime) }}
+                        </div>
+                    </div>
+                    <div class="area-music-info">
+                        <div class="music-info">
+                            <div :style="{ 'background-image': `url(${currentMusic.thumb})` }" class="music-thumb"></div>
+                            <div class="music-text">
+                                <div class="music-title">{{ currentMusic.title }}</div>
+                                <div class="music-desc">{{ currentMusic.desc }}</div>
+                            </div>
+                        </div>
+                        <div class="music-actions">
+                            <button class="btn-unlike"><fa-icon :icon="['far', 'thumbs-down']"></fa-icon></button>
+                            <button class="btn-like"><fa-icon :icon="['far', 'thumbs-up']"></fa-icon></button>
+                            <button><fa-icon :icon="['fas', 'ellipsis-v']"></fa-icon></button>
+                        </div>
+                    </div>
+                    <div class="area-actions">
+                        <button type="button" class="btn-caret">
+                            <fa-icon :icon="['fas', 'caret-up']" />
+                        </button>
                     </div>
                 </div>
-                <div class="music-actions">
-                    <button class="btn-unlike"><fa-icon :icon="['far', 'thumbs-down']"></fa-icon></button>
-                    <button class="btn-like"><fa-icon :icon="['far', 'thumbs-up']"></fa-icon></button>
-                    <button><fa-icon :icon="['fas', 'ellipsis-v']"></fa-icon></button>
-                </div>
             </div>
-            <div class="area-actions">
-                <button type="button" class="btn-caret">
-                    <fa-icon :icon="['fas', 'caret-up']" />
-                </button>
-            </div>
-        </div>
+        </transition>
     </div>
 </template>
 <style lang="scss" scoped>
-    #footer {
+    .footer-player {
         z-index: 9;
         
         position: fixed;
@@ -233,6 +237,15 @@
             }
         }
     }
+
+
+    .nav-enter-active, .nav-leave-active {
+        transition: transform 0.3s;
+    }
+    .nav-enter, .nav-leave-active {
+        transform: translateY(100%)
+    }
+
 </style>
 <script>
 import { mapGetters, mapActions } from 'vuex'
@@ -246,6 +259,13 @@ export default {
         }),
         musicProgress () {
             return this.currentSeconds / this.currentMusic.playtime * 100
+        },
+        showFooter () {
+            let result = false
+
+            if (typeof this.current !== 'undefined') result = true
+
+            return result
         }
     },
     methods: {
