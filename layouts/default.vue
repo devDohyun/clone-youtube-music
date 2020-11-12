@@ -4,7 +4,9 @@
         <transition name="fade">
             <nuxt />
         </transition>
-        <default-footer v-if="showFooter"></default-footer>
+        <transition name="nav">
+            <default-footer v-if="showFooter"></default-footer>
+        </transition>
     </div>
 </template>
 
@@ -34,6 +36,12 @@
     }
     .fade-enter, .fade-leave-active {
         opacity: 0;
+    }
+    .nav-enter-active, .nav-leave-active {
+        transition: transform 0.3s;
+    }
+    .nav-enter, .nav-leave-active {
+        transform: translateY(100%)
     }
 </style>
 
