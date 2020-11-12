@@ -263,7 +263,7 @@ export default {
         showFooter () {
             let result = false
 
-            if (typeof this.current !== 'undefined') result = true
+            if (typeof this.currentMusic !== 'undefined') result = true
 
             return result
         }
