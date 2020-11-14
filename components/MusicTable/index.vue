@@ -30,6 +30,11 @@
             font-size: 38px;
             font-weight: 700;
             letter-spacing: 0.35px;
+
+            @media (max-width: $media_md) {
+                margin-bottom: 25px;
+                font-size: 24px;
+            }
         }
 
         .table-items {
