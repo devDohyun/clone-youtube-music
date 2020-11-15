@@ -1,6 +1,6 @@
 <template>
     <div id="footer">
-        <transition name="nav">
+        <transition name="player">
             <div v-if="showFooter" class="footer-player">
                 <div
                     :style="{transform: `translateX(-${100 - musicProgress}%)`}"
@@ -48,6 +48,7 @@
                 </div>
             </div>
         </transition>
+
     </div>
 </template>
 <style lang="scss" scoped>
@@ -239,10 +240,10 @@
     }
 
 
-    .nav-enter-active, .nav-leave-active {
+    .player-enter-active, .player-leave-active {
         transition: transform 0.3s;
     }
-    .nav-enter, .nav-leave-active {
+    .player-enter, .player-leave-active {
         transform: translateY(100%)
     }
 
