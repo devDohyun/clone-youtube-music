@@ -122,7 +122,7 @@ export default {
                             title: '속이 뻥 뚫리는 역대급 가창력',
                             desc: '재생목록•YouTube Music',
                             playtime: 1000,
-                            thumb: 'https://picsum.photos/200'
+                            thumb: 'https://picsum.photos/id/171/200/200'
                         },
                     ]
                 }
