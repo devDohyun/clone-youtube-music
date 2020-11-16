@@ -1,6 +1,6 @@
 <template>
 	<div class="footer-player">
-		<div :style="{transform: `translateX(-${100 - musicProgress}%)`}" class="player-progress"></div>
+		<div :style="{ transform: `translateX(-${100 - musicProgress}%)` }" class="player-progress"></div>
 		<div class="area-wrapper">
 			<div class="area-player">
 				<div class="actions-wrapper">
@@ -263,6 +263,9 @@ export default {
             currentMusic: 'player/getCurrentMusic',
             isPlaying: 'player/getIsPlaying'
         }),
+        musicProgress () {
+            return this.currentSeconds / this.currentMusic.playtime * 100
+        },
     },
     methods: {
         ...mapActions({
@@ -278,9 +281,6 @@ export default {
             result += ('0' + (val % 60)).slice(-2)
             
             return result
-        },
-        musicProgress () {
-            return this.currentSeconds / this.currentMusic.playtime * 100
         },
         togglePannelShow () {
             this.$emit('toggle-pannel-show')
