@@ -1,7 +1,11 @@
 <template>
     <div id="footer">
         <transition name="player">
-            <footer-player v-if="showFooter" @toggle-pannel-show="showPannel = !showPannel"></footer-player>
+            <footer-player 
+                v-if="showFooter"
+                @toggle-pannel-show="showPannel = !showPannel"
+                :is-pannel-shown="showPannel"
+            ></footer-player>
         </transition>
         <transition name="pannel">
             <footer-pannel v-if="showFooter && showPannel"></footer-pannel>

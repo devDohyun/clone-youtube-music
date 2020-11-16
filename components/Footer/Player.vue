@@ -42,7 +42,12 @@
 				</div>
 			</div>
 			<div class="area-actions">
-				<button @click="togglePannelShow" type="button" class="btn-caret">
+				<button
+                    @click="togglePannelShow"
+                    type="button"
+                    :class="{ active: isPannelShown }"
+                    class="btn-caret"
+                >
 					<fa-icon :icon="['fas', 'caret-up']" />
 				</button>
 			</div>
@@ -231,6 +236,12 @@
 
                     &.btn-caret {
                         color: white;
+                        font-size: 18px;
+                        transition: transform 0.3s;
+
+                        &.active {
+                            transform: rotate(180deg);
+                        }
                     }
                 }
             }
@@ -241,6 +252,11 @@
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
+    props: {
+        isPannelShown: {
+            type: Boolean
+        }
+    },
     computed: {
         ...mapGetters({
             currentSeconds: 'player/getCurrentSeconds',
