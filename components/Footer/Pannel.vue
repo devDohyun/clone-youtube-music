@@ -2,7 +2,27 @@
     <div class="footer-pannel">
         <div class="main-pannel">
             <div class="current-music">
-                <div class="music-thumb" :style="{'background-image': `url(${currentMusic.thumb})`}"></div>
+                <div class="music-thumb" :style="{ 'background-image': `url(${currentMusic.thumb})` }"></div>
+            </div>
+        </div>
+        <div class="playlist-pannel">
+            <div class="tap-wrapper">
+                <button @click="1" type="button">다음 트랙</button>
+                <button type="button">가사</button>
+            </div>
+            <div class="playlist-wrapper">
+                <div
+                    v-for="(item, idx) in playlist"
+                    :key="idx"
+                    class="music-item"
+                >
+                    <div :style="{ 'background-image': `url(${item.thumb})` }" class="music-thumb"></div>
+                    <div class="music-text">
+                        <div class="music-title">{{ item.title }}</div>
+                        <div class="music-desc">{{ item.desc }}</div>
+                    </div>
+                    <div class="music-playtime">{{ item.playtime }}</div>
+                </div>
             </div>
         </div>
     </div>
@@ -22,7 +42,10 @@
 
         background-color: black;
 
+        font-size: 0;
+
         .main-pannel {
+            vertical-align: top;
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -46,6 +69,28 @@
                 }
             }
         }
+        .playlist-pannel {
+            vertical-align: top;
+            display: inline-block;
+            width: 50%;
+            height: 100%;
+
+            padding-left: 50px;
+            
+            .tap-wrapper {
+                button {
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    
+                    color: white;
+                    
+                    font-size: 14px;
+
+                    cursor: pointer;
+                }
+            }
+        }
     }
 </style>
 <script>
@@ -56,7 +101,8 @@ export default {
         ...mapGetters({
             currentSeconds: 'player/getCurrentSeconds',
             currentMusic: 'player/getCurrentMusic',
-            isPlaying: 'player/getIsPlaying'
+            isPlaying: 'player/getIsPlaying',
+            playlist: 'player/getPlaylist'
         }),
     },
     methods: {
