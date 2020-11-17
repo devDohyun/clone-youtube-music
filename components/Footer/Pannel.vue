@@ -90,6 +90,38 @@
                     cursor: pointer;
                 }
             }
+            .playlist-wrapper {
+                .music-item {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    
+                    .music-thumb {
+                        width: 32px;
+                        height: 32px;
+                        margin-right: 15px;
+
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                    .music-text {
+                        font-size: 14px;
+                        color: $color_gray3;
+
+                        .music-title {
+                            color: white;
+                        }
+                        .music-desc {
+                            margin-top: 7.5px;
+                        }
+                    }
+                    .music-playtime {
+                        color: $color_gray3;
+                        font-size: 14px;
+                    }
+                }
+            }
         }
     }
 </style>
