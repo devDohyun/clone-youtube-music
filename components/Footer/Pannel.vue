@@ -50,14 +50,14 @@
             justify-content: center;
             align-items: center;
 
-            width: 50%;
+            width: calc(100% - 40%);
             height: 100%;
 
             padding-bottom: 50px;
 
             .current-music {
                 width: 100%;
-                max-width: 800px;
+                max-width: 600px;
 
                 .music-thumb {
                     width: 100%;
@@ -72,7 +72,7 @@
         .playlist-pannel {
             vertical-align: top;
             display: inline-block;
-            width: 50%;
+            width: 40%;
             height: 100%;
 
             padding-left: 50px;
@@ -92,13 +92,17 @@
             }
             .playlist-wrapper {
                 .music-item {
-                    display: flex;
-                    justify-content: space-around;
-                    align-items: center;
+                    font-size: 0;
+
+                    padding: 10px;
+                    border-bottom: 1px solid $color_gray1;
                     
                     .music-thumb {
-                        width: 32px;
-                        height: 32px;
+                        vertical-align: middle;
+                        display: inline-block;
+                        
+                        width: 35px;
+                        height: 35px;
                         margin-right: 15px;
 
                         background-size: cover;
@@ -106,17 +110,37 @@
                         background-repeat: no-repeat;
                     }
                     .music-text {
-                        font-size: 14px;
+                        vertical-align: middle;
+                        display: inline-block;
+                        
+                        width: calc(100% - 50px - 30px);
+                        
+                        font-size: 16px;
                         color: $color_gray3;
+
+                        @media (max-width: $media_md) {
+                            font-size: 14px;
+                        }
+
+                        & > * {
+                            width: 100%;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
 
                         .music-title {
                             color: white;
+                            font-weight: 500;
                         }
                         .music-desc {
-                            margin-top: 7.5px;
+                            margin-top: 2.5px;
                         }
                     }
                     .music-playtime {
+                        vertical-align: middle;
+                        display: inline-block;
+
                         color: $color_gray3;
                         font-size: 14px;
                     }
