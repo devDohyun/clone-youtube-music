@@ -31,7 +31,7 @@ export default {
     styleResources: {
         scss: [
             '~assets/styles/variables.scss',
-            '~assets/styles/layout.scss'
+            '~assets/styles/default.scss'
         ]
     },
 
@@ -51,7 +51,8 @@ export default {
                 'faCaretDown',
                 'faStepBackward',
                 'faStepForward',
-                'faEllipsisV'
+                'faEllipsisV',
+                'faVolumeDown'
             ],
             regular: [
                 'faThumbsUp',
