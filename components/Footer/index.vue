@@ -3,7 +3,7 @@
         <transition name="player">
             <footer-player 
                 v-if="showFooter"
-                @toggle-pannel-show="showPannel = !showPannel"
+                @toggle-pannel-show="togglePannel"
                 :is-pannel-shown="showPannel"
             ></footer-player>
         </transition>
@@ -51,6 +51,15 @@ export default {
 
             return result
         }
+    },
+    methods: {
+        togglePannel () {
+            const target = !this.showPannel
+            this.showPannel = target
+
+            if (target) this.$root.$emit('nav-set-background')
+            else this.$root.$emit('nav-set-transparent')
+        },
     }
 }
 </script>

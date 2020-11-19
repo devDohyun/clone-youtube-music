@@ -14,9 +14,14 @@
                 <div
                     v-for="(item, idx) in playlist"
                     :key="idx"
+                    :class="{ 'music-now ': idx === playIndex }"
                     class="music-item"
                 >
-                    <div :style="{ 'background-image': `url(${item.thumb})` }" class="music-thumb"></div>
+                    <div :style="{ 'background-image': `url(${item.thumb})` }" class="music-thumb">
+                        <div class="thumb-overlay">
+                            <button type="button"><fa-icon :icon="['fas', 'volume-down']" /></button>
+                        </div>
+                    </div>
                     <div class="music-text">
                         <div class="music-title">{{ item.title }}</div>
                         <div class="music-desc">{{ item.desc }}</div>
@@ -42,6 +47,8 @@
 
         background-color: black;
 
+        text-align: center;
+
         font-size: 0;
 
         .main-pannel {
@@ -50,7 +57,7 @@
             justify-content: center;
             align-items: center;
 
-            width: calc(100% - 40%);
+            width: 50%;
             height: 100%;
 
             padding-bottom: 50px;
@@ -72,22 +79,39 @@
         .playlist-pannel {
             vertical-align: top;
             display: inline-block;
-            width: 40%;
+            width: 50%;
             height: 100%;
+
+            max-width: 600px;
 
             padding-left: 50px;
             
             .tap-wrapper {
                 button {
+                    padding: 15px;
+                    
                     background-color: transparent;
                     border: none;
+                    border-bottom: 1px solid white;
                     outline: none;
                     
                     color: white;
+
+                    text-align: center;
                     
                     font-size: 14px;
 
+
                     cursor: pointer;
+
+                    &:nth-of-type(1) {
+                        width: 60%;
+                    }
+                    &:nth-of-type(2) {
+                        width: 40%;
+                        color: rgba($color: white, $alpha: 0.3);
+                        border-color: rgba($color: white, $alpha: 0.3);
+                    }
                 }
             }
             .playlist-wrapper {
@@ -96,6 +120,12 @@
 
                     padding: 10px;
                     border-bottom: 1px solid $color_gray1;
+
+                    text-align: left;
+
+                    &.music-now {
+                        background-color: rgba($color: white, $alpha: 0.1);
+                    }
                     
                     .music-thumb {
                         vertical-align: middle;
@@ -108,12 +138,27 @@
                         background-size: cover;
                         background-position: center;
                         background-repeat: no-repeat;
+
+                        .thumb-overlay {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            
+                            width: 100%;
+                            height: 100%;
+                            background-color: rgba($color: black, $alpha: 0.35);
+
+                            button {
+                                color: white;
+                                font-size: 24px;
+                            }
+                        }
                     }
                     .music-text {
                         vertical-align: middle;
                         display: inline-block;
                         
-                        width: calc(100% - 50px - 30px);
+                        width: calc(100% - 50px - 40px);
                         
                         font-size: 16px;
                         color: $color_gray3;
@@ -141,8 +186,17 @@
                         vertical-align: middle;
                         display: inline-block;
 
+                        width: 40px;
+
                         color: $color_gray3;
-                        font-size: 14px;
+                        
+                        text-align: right;
+                        
+                        font-size: 16px;
+
+                        @media (max-width: $media_md) {
+                            font-size: 14px;
+                        }
                     }
                 }
             }
@@ -158,7 +212,8 @@ export default {
             currentSeconds: 'player/getCurrentSeconds',
             currentMusic: 'player/getCurrentMusic',
             isPlaying: 'player/getIsPlaying',
-            playlist: 'player/getPlaylist'
+            playlist: 'player/getPlaylist',
+            playIndex: 'player/getPlayIndex'
         }),
     },
     methods: {

@@ -1,5 +1,5 @@
 <template>
-    <div id="navigation" :class="{'nav-background': contentScrolled}">
+    <div id="navigation" :class="{ 'nav-background': navBackground }">
         <nuxt-link to="/" class="logo"><div class="logo-youtube-music">Music</div></nuxt-link>
         <div class="nav-menu">
             <nuxt-link to="/" class="menu-item">홈</nuxt-link>
@@ -103,7 +103,7 @@
 export default {
     data () {
         return {
-            contentScrolled: false
+            navBackground: false
         }
     },
     methods: {
@@ -115,12 +115,18 @@ export default {
         },
         scrollEventListener () {
             if (window.scrollY > 65) {
-                this.contentScrolled = true
-            } else this.contentScrolled = false
+                this.navBackground = true
+            } else this.navBackground = false
         }
     },
     mounted () {
         this.handleScrollEvent()
+        this.$root.$on('nav-set-background', () => {
+            this.navBackground = true
+        })
+        this.$root.$on('nav-set-transparent', () => {
+            this.navBackground = false
+        })
     },
     beforeDestroy () {
         this.removeScrollEvent()

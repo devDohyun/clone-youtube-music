@@ -1,7 +1,7 @@
 <template>
 	<div class="footer-player">
 		<div :style="{ transform: `translateX(-${100 - musicProgress}%)` }" class="player-progress"></div>
-		<div class="area-wrapper">
+		<div @click.self="togglePannelShow" class="area-wrapper">
 			<div class="area-player">
 				<div class="actions-wrapper">
 					<button @click="playPrevMusic" type="button" class="btn-step-backward">
@@ -17,9 +17,7 @@
 						<fa-icon :icon="['fas', 'step-forward']" />
 					</button>
 				</div>
-				<div
-					class="current-time"
-				>{{ $common.formTimeString(currentSeconds) }} / {{ $common.formTimeString(currentMusic.playtime) }}</div>
+				<div class="current-time">{{ $common.formTimeString(currentSeconds) }} / {{ $common.formTimeString(currentMusic.playtime) }}</div>
 			</div>
 			<div class="area-music-info">
 				<div class="music-info">
@@ -43,7 +41,7 @@
 			</div>
 			<div class="area-actions">
 				<button
-                    @click="togglePannelShow"
+                    @click.stop="togglePannelShow"
                     type="button"
                     :class="{ active: isPannelShown }"
                     class="btn-caret"
