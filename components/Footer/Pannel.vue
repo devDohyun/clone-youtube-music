@@ -21,7 +21,7 @@
                         <div class="music-title">{{ item.title }}</div>
                         <div class="music-desc">{{ item.desc }}</div>
                     </div>
-                    <div class="music-playtime">{{ item.playtime }}</div>
+                    <div class="music-playtime">{{ $common.formTimeString(item.playtime) }}</div>
                 </div>
             </div>
         </div>

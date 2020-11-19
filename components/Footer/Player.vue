@@ -19,7 +19,7 @@
 				</div>
 				<div
 					class="current-time"
-				>{{ formTimeString(currentSeconds) }} / {{ formTimeString(currentMusic.playtime) }}</div>
+				>{{ $common.formTimeString(currentSeconds) }} / {{ $common.formTimeString(currentMusic.playtime) }}</div>
 			</div>
 			<div class="area-music-info">
 				<div class="music-info">
@@ -274,14 +274,6 @@ export default {
             playNextMusic: 'player/playNextMusic',
             playPrevMusic: 'player/playPrevMusic',
         }),
-        formTimeString (val) {
-            let result = ''
-            result += Math.floor(val / 60)
-            result += ':'
-            result += ('0' + (val % 60)).slice(-2)
-            
-            return result
-        },
         togglePannelShow () {
             this.$emit('toggle-pannel-show')
         }

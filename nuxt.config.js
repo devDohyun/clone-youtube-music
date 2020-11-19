@@ -35,6 +35,10 @@ export default {
         ]
     },
 
+    plugins: [
+    { src: '~/plugins/common' }
+    ],
+
     fontawesome: {
         component: 'fa',
         suffix: true,
