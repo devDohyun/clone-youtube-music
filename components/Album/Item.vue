@@ -31,10 +31,14 @@
         
         display: inline-block;
 
-        width: 180px;
+        width: 225px;
 
         margin-left: 10px;
         margin-right: 10px;
+
+        @media (max-width: $media_md) {
+            width: 180px;
+        }
         
         .album-thumb {
             position: relative;
