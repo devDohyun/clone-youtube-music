@@ -116,6 +116,12 @@ export default {
                             playtime: 207,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/684015_1_f.jpg'
                         },
+                    ]
+                },
+                {
+                    type: 'table',
+                    title: '맞춤 믹스',
+                    items: [
                         {
                             id: 23,
                             type: 'mix',
@@ -123,6 +129,14 @@ export default {
                             desc: '재생목록•YouTube Music',
                             playtime: 1000,
                             thumb: 'https://picsum.photos/id/171/200/200'
+                        },
+                        {
+                            id: 24,
+                            type: 'mix',
+                            title: '기타치는 꿀성대 인디/어쿠스틱',
+                            desc: '재생목록•YouTube Music',
+                            playtime: 1000,
+                            thumb: 'https://picsum.photos/id/312/200/200'
                         },
                     ]
                 }
