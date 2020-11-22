@@ -19,7 +19,8 @@
                 >
                     <div :style="{ 'background-image': `url(${item.thumb})` }" class="music-thumb">
                         <div class="thumb-overlay">
-                            <button type="button"><fa-icon :icon="['fas', 'volume-down']" /></button>
+                            <button v-if="isPlaying && idx === playIndex" type="button"><fa-icon :icon="['fas', 'volume-down']" /></button>
+                            <button v-else-if="!isPlaying && idx === playIndex" type="button"><fa-icon :icon="['fas', 'play']" /></button>
                         </div>
                     </div>
                     <div class="music-text">
@@ -125,6 +126,12 @@
 
                     &.music-now {
                         background-color: rgba($color: white, $alpha: 0.1);
+
+                        .music-thumb {
+                            .thumb-overlay {
+                                display: flex;
+                            }
+                        }
                     }
                     
                     .music-thumb {
@@ -139,8 +146,10 @@
                         background-position: center;
                         background-repeat: no-repeat;
 
+
                         .thumb-overlay {
-                            display: flex;
+                            display: none;
+                            // display: flex;
                             justify-content: center;
                             align-items: center;
                             
@@ -150,7 +159,7 @@
 
                             button {
                                 color: white;
-                                font-size: 24px;
+                                font-size: 18px;
                             }
                         }
                     }
