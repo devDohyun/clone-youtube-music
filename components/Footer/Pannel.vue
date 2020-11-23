@@ -14,6 +14,7 @@
                 <div
                     v-for="(item, idx) in playlist"
                     :key="idx"
+                    @click="playThis(idx)"
                     :class="{ 'music-now ': idx === playIndex }"
                     class="music-item"
                 >
@@ -123,6 +124,8 @@
                     border-bottom: 1px solid $color_gray1;
 
                     text-align: left;
+
+                    cursor: pointer;
 
                     &.music-now {
                         background-color: rgba($color: white, $alpha: 0.1);
@@ -245,6 +248,10 @@ export default {
         },
         togglePannelShow () {
             this.$emit('toggle-pannel-show')
+        },
+        playThis (index) {
+            this.$store.commit('player/setPlayIndex', index)
+            this.$store.dispatch('player/playMusic')
         }
     }
 }
