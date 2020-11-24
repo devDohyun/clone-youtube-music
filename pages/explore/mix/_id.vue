@@ -61,14 +61,16 @@
                     padding: 7.5px 15px;
 
                     font-size: 14px;
-                    border: 1px solid;
+                    border: 1px solid white;
 
+                    &:not(:last-of-type) {
+                        margin-right: 15px;
+                    }
                     &:nth-of-type(1) {
                         background-color: white;
                     }
                     &:nth-of-type(2) {
                         color: white;
-                        border-color: white;
                     }
                 }
             }
