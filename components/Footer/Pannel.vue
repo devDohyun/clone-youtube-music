@@ -121,7 +121,7 @@
                     font-size: 0;
 
                     padding: 10px;
-                    border-bottom: 1px solid $color_gray1;
+                    border-bottom: 1px solid $color_gray2;
 
                     text-align: left;
 

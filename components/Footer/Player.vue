@@ -63,7 +63,7 @@
         width: 100%;
         height: 70px;
 
-        background-color: $color_gray1;
+        background-color: $color_gray2;
 
         .player-progress {
             position: absolute;
