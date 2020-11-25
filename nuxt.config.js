@@ -52,7 +52,10 @@ export default {
                 'faStepBackward',
                 'faStepForward',
                 'faEllipsisV',
-                'faVolumeDown'
+                'faVolumeDown',
+                'faRecordVinyl',
+                'faChartLine',
+                'faLaugh'
             ],
             regular: [
                 'faThumbsUp',
