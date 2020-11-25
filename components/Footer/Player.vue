@@ -123,7 +123,7 @@
                     min-width: 60px;
                     margin-left: 15px;
                     font-size: 12px;
-                    color: $color_gray3;
+                    color: $color_gray5;
 
                     @media screen and (max-width: $media_sd) {
                         display: none;
@@ -146,7 +146,7 @@
 
                         margin-right: 15px;
 
-                        background-color: $color_gray3;
+                        background-color: $color_gray5;
                         background-position: center;
                         background-repeat: no-repeat;
                         background-size: cover;
@@ -173,7 +173,7 @@
                             text-overflow: ellipsis;
                         }
                         .music-desc {
-                            color: $color_gray3;
+                            color: $color_gray5;
 
                             white-space: nowrap;
                             overflow: hidden;
@@ -197,7 +197,7 @@
                         outline: none;
                         border: none;
 
-                        color: $color_gray3;
+                        color: $color_gray5;
                         font-size: 20px;
 
                         cursor: pointer;
