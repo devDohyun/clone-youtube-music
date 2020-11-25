@@ -21,7 +21,7 @@
         .pannel-mix {
             padding: 100px 50px 50px 50px;
             
-            background-color: $color_gray1;
+            background-color: $color_gray2;
             
             font-size: 0;
 
@@ -34,7 +34,7 @@
 
                 margin-right: 50px;
 
-                background-color: $color_gray3;
+                background-color: $color_gray5;
                 border-radius: 5px;
             }
             .mix-info {
@@ -51,7 +51,7 @@
                 }
                 .mix-desc, .mix-summary {
                     font-size: 14px;
-                    color: $color_gray3;
+                    color: $color_gray5;
                 }
             }
             .mix-actions {
