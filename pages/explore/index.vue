@@ -28,7 +28,10 @@
                 ></music-table>
             </div>
             <div class="content-item">
-                <category-table></category-table>
+                <label-table
+                    title="분위기 및 장르"
+                    :items="labels"
+                ></label-table>
             </div>
         </div>
     </div>
@@ -71,7 +74,7 @@
     }
 </style>
 <script>
-import CategoryTable from '@/components/CategoryTable'
+import LabelTable from '@/components/LabelTable'
 import MusicTable from '@/components/MusicTable'
 
 export default {
@@ -80,7 +83,7 @@ export default {
     }),
     components: {
         MusicTable,
-        CategoryTable
+        LabelTable
     },
     data () {
         return {
@@ -112,12 +115,74 @@ export default {
             ],
             hitItems: [
                 {
-                    id: 101,
+                    id: 105,
                     type: 'music',
                     title: 'Dynamite',
                     desc: 'BTS (방탄소년단)•Dynamite (NightTime Version)',
                     playtime: 1000,
                     thumb: 'https://picsum.photos/id/312/200/200'
+                },
+            ],
+            labels: [
+                {
+                    id: 107,
+                    title: 'R&B & 소울',
+                    color: '#3E7BDB'
+                },
+                {
+                    id: 108,
+                    title: '2010년대',
+                    color: '#A4FFA4'
+                },
+                {
+                    id: 103,
+                    title: '힙합',
+                    color: 'rgb(226, 75, 0)'
+                },
+                {
+                    id: 104,
+                    title: '계절 & 테마',
+                    color: 'rgb(255, 231, 128)'
+                },
+                {
+                    id: 105,
+                    title: '편안한 분위기',
+                    color: 'rgb(164, 197, 255)'
+                },
+                {
+                    id: 106,
+                    title: '팝',
+                    color: 'rgb(255, 120, 255)'
+                },
+                {
+                    id: 107,
+                    title: '국내 발라드',
+                    color: 'rgb(164, 197, 255)'
+                },
+                {
+                    id: 108,
+                    title: 'OST & 뮤지컬',
+                    color: 'rgb(77, 238, 255)'
+                },
+                {
+                    id: 109,
+                    title: '잠잘 때',
+                    color: 'rgb(123, 62, 219)'
+                },
+                {
+                    id: 110,
+                    title: '힘이 필요할 때',
+                    color: 'rgb(255, 231, 128)'
+                },
+                {
+                    id: 111,
+                    title: '국내 댄스',
+                    color: 'rgb(0, 146, 191)'
+                },
+                {
+                    id: 112,
+                    title: '사랑 노래',
+                    color: 'rgb(204, 0, 0)'
                 },
             ]
         }

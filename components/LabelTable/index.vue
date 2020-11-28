@@ -1,25 +1,25 @@
 <template>
-    <div class="music-table">
+    <div class="label-table">
         <div class="table-subtitle">{{ tableSubitle }}</div>
         <div class="table-title">{{ tableTitle }}</div>
         <div class="table-items">
-            <template v-for="(item, iIdx) in tableItems">
-                <album-item
-                    :key="iIdx"
-                    :id="item.id"
-                    :type="item.type"
-                    :title="item.title"
-                    :desc="item.desc"
-                    :playtime="item.playtime"
-                    :thumb="item.thumb"
-                ></album-item>
-            </template>
+            <div
+                v-for="item in tableItems"
+                :key="item.id"
+                class="label-item"
+            >
+                <div :style="{ 'background-color': item.color }" class="color-side"></div>
+                <div class="text">{{ item.title }}</div>
+            </div>
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
-    .music-table {
+    $label_height: 48px;
+    $label_margin_bottom: 10px;
+
+    .label-table {
         &:not(:last-child) {
             margin-bottom: 125px;
         }
@@ -38,19 +38,31 @@
         }
 
         .table-items {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            height: ($label_height + $label_margin_bottom) * 4 - $label_margin_bottom;
+            
             white-space: nowrap;
             overflow-x: auto;
+
+            .label-item {
+                width: 180px;
+                height: $label_height;
+
+                background-color: $color_gray2;
+
+                font-size: 14px;
+            }
         }
     }
 </style>
 
 <script>
-import AlbumItem from '@/components/Album/Item'
-
 export default {
-    components: {
-        AlbumItem
-    },
     props: {
         subtitle: {
 
