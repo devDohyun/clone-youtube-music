@@ -46,6 +46,10 @@
             align-items: center;
             justify-content: space-between;
 
+            @media (max-width: $media_sd) {
+                flex-direction: column;
+            }
+
             .category-item {
                 width: calc(33% - 15px);
                 
@@ -61,6 +65,11 @@
 
                 transition-property: background-color;
                 transition-duration: 0.1s;
+
+                @media (max-width: $media_sd) {
+                    width: 100%;
+                    margin-bottom: 15px;
+                }
                 
                 &:hover { 
                     background-color: $color_gray1;
@@ -125,12 +134,12 @@ export default {
             ],
             labels: [
                 {
-                    id: 107,
+                    id: 101,
                     title: 'R&B & 소울',
                     color: '#3E7BDB'
                 },
                 {
-                    id: 108,
+                    id: 102,
                     title: '2010년대',
                     color: '#A4FFA4'
                 },
