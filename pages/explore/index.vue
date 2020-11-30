@@ -25,6 +25,7 @@
                 <music-table
                     title="인기곡"
                     :items="hitItems"
+                    direction="cloumn"
                 ></music-table>
             </div>
             <div class="content-item">
