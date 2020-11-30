@@ -66,6 +66,8 @@
                 transition-property: background-color;
                 transition-duration: 0.1s;
 
+                cursor: pointer;
+
                 @media (max-width: $media_sd) {
                     width: 100%;
                     margin-bottom: 15px;
@@ -73,6 +75,10 @@
                 
                 &:hover { 
                     background-color: $color_gray1;
+                }
+
+                svg {
+                    margin-right: 5px;
                 }
             }
         }
@@ -192,6 +198,66 @@ export default {
                     id: 112,
                     title: '사랑 노래',
                     color: 'rgb(204, 0, 0)'
+                },
+                {
+                    id: 113,
+                    title: '라틴',
+                    color: 'rgb(255, 194, 0)'
+                },
+                {
+                    id: 114,
+                    title: '메탈',
+                    color: 'rgb(140, 140, 140)'
+                },
+                {
+                    id: 115,
+                    title: '키즈 & 가족',
+                    color: 'rgb(164, 197, 255)'
+                },
+                {
+                    id: 116,
+                    title: '재즈',
+                    color: 'rgb(0, 146, 191)'
+                },
+                {
+                    id: 117,
+                    title: '출퇴근 & 등하교',
+                    color: 'rgb(255, 194, 0)'
+                },
+                {
+                    id: 118,
+                    title: '올드스쿨 & 전통음악',
+                    color: 'rgb(0, 165, 19)'
+                },
+                {
+                    id: 119,
+                    title: '인디 & 얼터너티브',
+                    color: 'rgb(204, 204, 204)'
+                },
+                {
+                    id: 120,
+                    title: '클래식',
+                    color: 'rgb(204, 204, 204)'
+                },
+                {
+                    id: 121,
+                    title: '아시아',
+                    color: 'rgb(204, 0, 0)'
+                },
+                {
+                    id: 122,
+                    title: '트로트',
+                    color: 'rgb(164, 255, 164)'
+                },
+                {
+                    id: 123,
+                    title: '컨트리 & 아메리카나',
+                    color: 'rgb(51, 125, 255)'
+                },
+                {
+                    id: 124,
+                    title: '아프리카',
+                    color: 'rgb(0, 165, 19)'
                 },
             ]
         }

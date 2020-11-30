@@ -6,9 +6,9 @@
             <div
                 v-for="item in tableItems"
                 :key="item.id"
+                :style="{ 'border-left-color': item.color }"
                 class="label-item"
             >
-                <div :style="{ 'background-color': item.color }" class="color-side"></div>
                 <div class="text">{{ item.title }}</div>
             </div>
         </div>
@@ -17,7 +17,7 @@
 
 <style lang="scss" scoped>
     $label_height: 48px;
-    $label_margin_bottom: 10px;
+    $label_margin: 16px;
 
     .label-table {
         &:not(:last-child) {
@@ -41,21 +41,33 @@
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: flex-start;
 
-            height: ($label_height + $label_margin_bottom) * 4 - $label_margin_bottom;
+            height: ($label_height + $label_margin) * 4 + 15px;
             
             white-space: nowrap;
             overflow-x: auto;
 
             .label-item {
+                display: flex;
+                align-items: center;
+                
                 width: 180px;
                 height: $label_height;
 
-                background-color: $color_gray2;
+                margin-bottom: $label_margin;
+                margin-right: $label_margin;
+                padding: 0 10px;
 
                 font-size: 14px;
+
+                background-color: $color_gray2;
+
+                border-left: 6px solid;
+                border-radius: 4px;
+
+                &:nth-of-type(4n) {
+                    margin-bottom: 0;
+                }
             }
         }
     }
