@@ -55,61 +55,86 @@
             white-space: nowrap;
             overflow-x: auto;
 
-            .table-column {
+            &.table-column {
+                $music_column_height: 48px;
+                $music_column_margin: 16px;
+                
                 display: flex;
                 flex-direction: column;
                 flex-wrap: wrap;
-            }
 
-            .music-item {
-                display: flex;
-                align-items: center;
-
-                width: 420px;
-
-                .music-thumb { 
-                    width: 48px;
-                    height: 48px;
-
-                    margin-right: 4px;
-
-                    border-radius: 3px;
-
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
-                }
-
-                .music-meta {
+                height: ($music_column_height + $music_column_margin) * 4 + 20px;
+                
+                .music-item {
                     display: flex;
+                    align-items: center;
 
-                    justify-content: space-around;
-                    
-                    width: 75px;
+                    width: 420px;
+                    height: $music_column_height;
 
-                    font-size: 14px;
-                }
+                    margin-bottom: $music_column_margin;
+                    margin-right: $music_column_margin;
 
-                .music-text {
-                    flex: 1;
-                    flex-wrap: wrap;
-                    
-                    .music-title {
-                        margin-bottom: 3.5px;
+                    .music-thumb { 
+                        width: 48px;
+                        height: 48px;
 
-                        font-size: 14px;
+                        flex-grow: 0;
+                        flex-shrink: 0;
 
-                        word-break: keep-all;
-                        white-space: normal;
-                        cursor: pointer;
+                        margin-right: 4px;
+
+                        border-radius: 3px;
+
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
                     }
-                    .music-desc {
-                        font-size: 14px;
 
-                        color: $color_gray5;
+                    .music-meta {
+                        display: flex;
+
+                        flex-grow: 0;
+                        flex-shrink: 0;
+
+                        justify-content: space-around;
+                        
+                        width: 75px;
+
+                        font-size: 14px;
+                    }
+
+                    .music-text {
+                        flex: 1;
+                        flex-wrap: wrap;
+                        overflow: hidden;
+
+                        .music-title, .music-desc {
+                            max-width: 100%;
+                            word-wrap: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                        
+                        
+                        .music-title {
+                            margin-bottom: 3.5px;
+
+                            font-size: 14px;
+
+                            word-break: keep-all;
+                            white-space: normal;
+                            cursor: pointer;
+                        }
+                        .music-desc {
+                            font-size: 14px;
+
+                            color: $color_gray5;
+                        }
                     }
                 }
             }
+
         }
     }
 </style>

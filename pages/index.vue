@@ -96,7 +96,7 @@ export default {
                             id: 0,
                             type: 'music',
                             title: '흔들리는 꽃들 속에서 네 샴푸향이 느껴진거야',
-                            desc: '노래•장범준',
+                            desc: '노래 • 장범준',
                             playtime: 168,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/흔들리는-꽃들-속에서-네-샴푸향이-느껴진거야.jpg'
                         },
@@ -104,7 +104,7 @@ export default {
                             id: 1,
                             type: 'music',
                             title: '스토커',
-                            desc: '노래•10cm(십센치)',
+                            desc: '노래 • 10cm(십센치)',
                             playtime: 255,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/스토커.jpg'
                         },
@@ -112,7 +112,7 @@ export default {
                             id: 2,
                             type: 'music',
                             title: '길',
-                            desc: '노래•버스커버스커',
+                            desc: '노래 • 버스커버스커',
                             playtime: 207,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/684015_1_f.jpg'
                         },
@@ -126,7 +126,7 @@ export default {
                             id: 23,
                             type: 'mix',
                             title: '속이 뻥 뚫리는 역대급 가창력',
-                            desc: '재생목록•YouTube Music',
+                            desc: '재생목록 • YouTube Music',
                             playtime: 1000,
                             thumb: 'https://picsum.photos/id/171/200/200'
                         },
@@ -134,7 +134,7 @@ export default {
                             id: 24,
                             type: 'mix',
                             title: '기타치는 꿀성대 인디/어쿠스틱',
-                            desc: '재생목록•YouTube Music',
+                            desc: '재생목록 • YouTube Music',
                             playtime: 1000,
                             thumb: 'https://picsum.photos/id/312/200/200'
                         },
