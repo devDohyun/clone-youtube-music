@@ -6,7 +6,7 @@
             >
                 <template v-if="content.type === 'table'">
                     <music-table
-                        :key="contentIdx"
+                        :key="`${contentIdx}${content.title}`"
                         :title="content.title"
                         :items="content.items"
                     ></music-table>
@@ -28,6 +28,17 @@
                     </div>
                 </div>
             </div>
+            <template
+                v-for="(content, contentIdx) in contentListMiddle"    
+            >
+                <template v-if="content.type === 'table'">
+                    <music-table
+                        :key="`${contentIdx}${content.title}`"
+                        :title="content.title"
+                        :items="content.items"
+                    ></music-table>
+                </template>
+            </template>
         </div>
     </div>
 </template>
@@ -139,6 +150,146 @@ export default {
                             thumb: 'https://picsum.photos/id/312/200/200'
                         },
                     ]
+                },
+                {
+                    type: 'table',
+                    title: '실시간 인기곡',
+                    items: [
+                        {
+                            id: 105,
+                            type: 'music',
+                            title: 'Life Goes On',
+                            desc: 'BTS (방탄소년단) • BE',
+                            playtime: 1000,
+                            thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/BTS_BE.jpg',
+                            rankChange: 3
+                        },
+                        {
+                            id: 106,
+                            type: 'music',
+                            title: 'Dynamite',
+                            desc: 'BTS (방탄소년단) • Dynamite (NightTime Version)',
+                            playtime: 1000,
+                            thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/600x600bb.jpg',
+                        },
+                        {
+                            id: 107,
+                            type: 'music',
+                            title: 'Black Mamba',
+                            desc: 'æspa • Black Mamba',
+                            playtime: 1000,
+                            thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/blackmamba.jpg',
+                            rankChange: 3
+                        },
+                        {
+                            id: 108,
+                            type: 'music',
+                            title: 'Lovesick Girls',
+                            desc: 'BLACKPINK • THE ALBUM',
+                            playtime: 1000,
+                            thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/lovesickgirls.jpg',
+                            rankChange: -2
+                        },
+                        {
+                            id: 109,
+                            type: 'music',
+                            title: '테스형!',
+                            desc: '나훈아 • 아홉 이야기',
+                            playtime: 1000,
+                            thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/ninestory.jpg',
+                        },
+                        {
+                            id: 110,
+                            type: 'music',
+                            title: 'I CAN\'T STOP ME',
+                            desc: 'TWICE • Eyes wide open',
+                            playtime: 1000,
+                            thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/icantstopme.jpg',
+                            rankChange: -2
+                        },
+                        {
+                            id: 111,
+                            type: 'music',
+                            title: 'HERO',
+                            desc: '임영웅 • HERO',
+                            playtime: 1000,
+                            thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/hero.jpg',
+                        },
+                        {
+                            id: 112,
+                            type: 'music',
+                            title: 'VVS(피처링: JUSTHIS)',
+                            desc: 'Miranni, Munchman, KI • Show Me the Money',
+                            playtime: 1000,
+                            thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/ShowMetheMoney9Episode1.jpg',
+                        },
+                        {
+                            id: 113,
+                            type: 'music',
+                            title: 'AYA',
+                            desc: '마마무(MAMAMOO) • TRAVEL',
+                            playtime: 1000,
+                            thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/aya.jpg',
+                        },
+                        {
+                            id: 114,
+                            type: 'music',
+                            title: 'Blue & Grey',
+                            desc: 'BTS • BE',
+                            playtime: 1000,
+                            thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/BTS_BE.jpg',
+                            rankChange: 1
+                        },
+                        {
+                            id: 115,
+                            type: 'music',
+                            title: 'MAGO',
+                            desc: '여자친구 (GFRIEND) • 回:Walpurgis Night',
+                            playtime: 1000,
+                            thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/walpurgisnight.jpg',
+                        },
+                        {
+                            id: 116,
+                            type: 'music',
+                            title: '잠이 오질 않네요',
+                            desc: '장범준 • 잠이 오질 않네요',
+                            playtime: 1000,
+                            thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/neversleep.jpg',
+                        },
+                        {
+                            id: 117,
+                            type: 'music',
+                            title: 'Fly To My Room',
+                            desc: 'BTS • BE',
+                            playtime: 1000,
+                            thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/BTS_BE.jpg',
+                        },
+                        {
+                            id: 118,
+                            type: 'music',
+                            title: 'When We Disco',
+                            desc: '박진영 및 선미 (SUNMI) • When We Disco',
+                            playtime: 1000,
+                            thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/whenwedisco.jpg',
+                            rankChange: -1
+                        },
+                        {
+                            id: 119,
+                            type: 'music',
+                            title: '취기를 빌려 (취향저격 그녀 X 산들)',
+                            desc: '산들 • 취기를 빌려 (취향저격 그녀 X 산들)',
+                            playtime: 1000,
+                            thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/취기를빌려.jpg',
+                        },
+                        {
+                            id: 120,
+                            type: 'music',
+                            title: 'How You Like That',
+                            desc: 'BLACKPINK • How You Like That',
+                            playtime: 1000,
+                            thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/howyoulikethat.jpg',
+                        }
+                    ]
                 }
             ]
         }
@@ -146,13 +297,12 @@ export default {
     computed: {
         contentListTop () {
             let result = []
-
             result = result.concat(...this.tableList.slice(0, 2))
-
-            if (this.isUserSetFavoriteArtist === false) {
-                result.splice(2, 0, { type: 'setFavoriteArtist' })
-            }
-            
+            return result
+        },
+        contentListMiddle () {
+            let result = []
+            result = result.concat(...this.tableList.slice(2, this.tableList.length))
             return result
         }
     }

@@ -36,6 +36,13 @@
     .music-table {
         &:not(:last-child) {
             margin-bottom: 125px;
+
+            @media (max-width: $media_md) {
+                margin-bottom: 100px;
+            }
+            @media (max-width: $media_sd) {
+                margin-bottom: 75px;
+            }
         }
 
         .table-title {

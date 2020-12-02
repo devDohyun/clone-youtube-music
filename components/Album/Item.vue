@@ -64,6 +64,10 @@
                 }
             }
         }
+        .album-title, .album-desc {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
         .album-title {
             margin-bottom: 3.5px;
 
@@ -75,7 +79,7 @@
         }
         .album-desc {
             font-size: 14px;
-
+            white-space: nowrap;
             color: $color_gray5;
         }
         .btn-play-music {
