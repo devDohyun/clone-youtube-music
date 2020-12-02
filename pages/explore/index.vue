@@ -26,6 +26,7 @@
                     title="인기곡"
                     :items="hitItems"
                     direction="cloumn"
+                    show-rank
                 ></music-table>
             </div>
             <div class="content-item">
@@ -33,6 +34,13 @@
                     title="분위기 및 장르"
                     :items="labels"
                 ></label-table>
+            </div>
+            <div class="content-item">
+                <music-table
+                    title="인기"
+                    :items="rankItems"
+                    direction="cloumn"
+                ></music-table>
             </div>
         </div>
     </div>
@@ -137,6 +145,7 @@ export default {
                     desc: 'BTS (방탄소년단) • BE',
                     playtime: 1000,
                     thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/BTS_BE.jpg',
+                    rankChange: 3
                 },
                 {
                     id: 106,
@@ -153,6 +162,7 @@ export default {
                     desc: 'æspa • Black Mamba',
                     playtime: 1000,
                     thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/blackmamba.jpg',
+                    rankChange: 3
                 },
                 {
                     id: 108,
@@ -161,6 +171,7 @@ export default {
                     desc: 'BLACKPINK • THE ALBUM',
                     playtime: 1000,
                     thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/lovesickgirls.jpg',
+                    rankChange: -2
                 },
                 {
                     id: 109,
@@ -177,6 +188,7 @@ export default {
                     desc: 'TWICE • Eyes wide open',
                     playtime: 1000,
                     thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/icantstopme.jpg',
+                    rankChange: -2
                 },
                 {
                     id: 111,
@@ -209,6 +221,7 @@ export default {
                     desc: 'BTS • BE',
                     playtime: 1000,
                     thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/BTS_BE.jpg',
+                    rankChange: 1
                 },
                 {
                     id: 115,
@@ -241,6 +254,7 @@ export default {
                     desc: '박진영 및 선미 (SUNMI) • When We Disco',
                     playtime: 1000,
                     thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/whenwedisco.jpg',
+                    rankChange: -1
                 },
                 {
                     id: 119,
@@ -381,6 +395,11 @@ export default {
                     color: 'rgb(0, 165, 19)'
                 },
             ]
+        }
+    },
+    computed: {
+        rankItems () {
+            return [...this.hitItems].sort(() => Math.random() - 0.5)
         }
     }
 }
