@@ -138,7 +138,7 @@ export default {
                             type: 'mix',
                             title: '속이 뻥 뚫리는 역대급 가창력',
                             desc: '재생목록 • YouTube Music',
-                            playtime: 1000,
+                            playtime: 144,
                             thumb: 'https://picsum.photos/id/171/200/200'
                         },
                         {
@@ -146,7 +146,7 @@ export default {
                             type: 'mix',
                             title: '기타치는 꿀성대 인디/어쿠스틱',
                             desc: '재생목록 • YouTube Music',
-                            playtime: 1000,
+                            playtime: 144,
                             thumb: 'https://picsum.photos/id/312/200/200'
                         },
                     ]
@@ -160,7 +160,7 @@ export default {
                             type: 'music',
                             title: 'Life Goes On',
                             desc: 'BTS (방탄소년단) • BE',
-                            playtime: 1000,
+                            playtime: 144,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/BTS_BE.jpg',
                             rankChange: 3
                         },
@@ -169,7 +169,7 @@ export default {
                             type: 'music',
                             title: 'Dynamite',
                             desc: 'BTS (방탄소년단) • Dynamite (NightTime Version)',
-                            playtime: 1000,
+                            playtime: 144,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/600x600bb.jpg',
                         },
                         {
@@ -177,7 +177,7 @@ export default {
                             type: 'music',
                             title: 'Black Mamba',
                             desc: 'æspa • Black Mamba',
-                            playtime: 1000,
+                            playtime: 144,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/blackmamba.jpg',
                             rankChange: 3
                         },
@@ -186,7 +186,7 @@ export default {
                             type: 'music',
                             title: 'Lovesick Girls',
                             desc: 'BLACKPINK • THE ALBUM',
-                            playtime: 1000,
+                            playtime: 144,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/lovesickgirls.jpg',
                             rankChange: -2
                         },
@@ -195,7 +195,7 @@ export default {
                             type: 'music',
                             title: '테스형!',
                             desc: '나훈아 • 아홉 이야기',
-                            playtime: 1000,
+                            playtime: 144,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/ninestory.jpg',
                         },
                         {
@@ -203,7 +203,7 @@ export default {
                             type: 'music',
                             title: 'I CAN\'T STOP ME',
                             desc: 'TWICE • Eyes wide open',
-                            playtime: 1000,
+                            playtime: 144,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/icantstopme.jpg',
                             rankChange: -2
                         },
@@ -212,7 +212,7 @@ export default {
                             type: 'music',
                             title: 'HERO',
                             desc: '임영웅 • HERO',
-                            playtime: 1000,
+                            playtime: 144,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/hero.jpg',
                         },
                         {
@@ -220,7 +220,7 @@ export default {
                             type: 'music',
                             title: 'VVS(피처링: JUSTHIS)',
                             desc: 'Miranni, Munchman, KI • Show Me the Money',
-                            playtime: 1000,
+                            playtime: 144,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/ShowMetheMoney9Episode1.jpg',
                         },
                         {
@@ -228,7 +228,7 @@ export default {
                             type: 'music',
                             title: 'AYA',
                             desc: '마마무(MAMAMOO) • TRAVEL',
-                            playtime: 1000,
+                            playtime: 144,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/aya.jpg',
                         },
                         {
@@ -236,7 +236,7 @@ export default {
                             type: 'music',
                             title: 'Blue & Grey',
                             desc: 'BTS • BE',
-                            playtime: 1000,
+                            playtime: 144,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/BTS_BE.jpg',
                             rankChange: 1
                         },
@@ -245,7 +245,7 @@ export default {
                             type: 'music',
                             title: 'MAGO',
                             desc: '여자친구 (GFRIEND) • 回:Walpurgis Night',
-                            playtime: 1000,
+                            playtime: 144,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/walpurgisnight.jpg',
                         },
                         {
@@ -253,7 +253,7 @@ export default {
                             type: 'music',
                             title: '잠이 오질 않네요',
                             desc: '장범준 • 잠이 오질 않네요',
-                            playtime: 1000,
+                            playtime: 144,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/neversleep.jpg',
                         },
                         {
@@ -261,7 +261,7 @@ export default {
                             type: 'music',
                             title: 'Fly To My Room',
                             desc: 'BTS • BE',
-                            playtime: 1000,
+                            playtime: 144,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/BTS_BE.jpg',
                         },
                         {
@@ -269,7 +269,7 @@ export default {
                             type: 'music',
                             title: 'When We Disco',
                             desc: '박진영 및 선미 (SUNMI) • When We Disco',
-                            playtime: 1000,
+                            playtime: 144,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/whenwedisco.jpg',
                             rankChange: -1
                         },
@@ -278,7 +278,7 @@ export default {
                             type: 'music',
                             title: '취기를 빌려 (취향저격 그녀 X 산들)',
                             desc: '산들 • 취기를 빌려 (취향저격 그녀 X 산들)',
-                            playtime: 1000,
+                            playtime: 144,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/취기를빌려.jpg',
                         },
                         {
@@ -286,7 +286,7 @@ export default {
                             type: 'music',
                             title: 'How You Like That',
                             desc: 'BLACKPINK • How You Like That',
-                            playtime: 1000,
+                            playtime: 144,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/howyoulikethat.jpg',
                         }
                     ]
