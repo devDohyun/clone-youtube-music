@@ -22,6 +22,7 @@
                     <div class="music-meta">
                         <div class="music-idx">{{ iIdx + 1 }}</div>
                     </div>
+                    
                     <div class="music-text">
                         <div class="music-title">{{  item.title }}</div>
                         <div class="music-desc">{{ item.desc }}</div>
