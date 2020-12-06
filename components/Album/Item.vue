@@ -36,7 +36,7 @@
         margin-left: 10px;
         margin-right: 10px;
 
-        @media (max-width: $media_md) {
+        @media (max-width: $media_ld) {
             width: 180px;
         }
         
