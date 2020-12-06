@@ -5,11 +5,10 @@
                 v-for="(content, contentIdx) in contentListTop"    
             >
                 <template v-if="content.type === 'table'">
-                    <music-table
-                        :key="`${contentIdx}${content.title}`"
-                        :title="content.title"
-                        :items="content.items"
-                    ></music-table>
+                    <section :key="`${contentIdx}${content.title}`">
+                        <div class="section-title">{{ content.title }}</div>
+                        <music-table :items="content.items"></music-table>
+                    </section>
                 </template>
             </template>
             <div class="announce-set-favorite" v-if="false">
@@ -32,11 +31,11 @@
                 v-for="(content, contentIdx) in contentListMiddle"    
             >
                 <template v-if="content.type === 'table'">
-                    <music-table
-                        :key="`${contentIdx}${content.title}`"
-                        :title="content.title"
-                        :items="content.items"
-                    ></music-table>
+                    <section :key="`${contentIdx}${content.title}`">
+                        <div class="section-title">{{ content.title }}</div>
+                        <div class="section-title"></div>
+                        <music-table :items="content.items"></music-table>
+                    </section>
                 </template>
             </template>
         </div>
@@ -126,6 +125,15 @@ export default {
                             desc: '노래 • 버스커버스커',
                             playtime: 207,
                             thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/684015_1_f.jpg'
+                        },
+                        {
+                            id: 108,
+                            type: 'music',
+                            title: 'Lovesick Girls',
+                            desc: 'BLACKPINK • THE ALBUM',
+                            playtime: 144,
+                            thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/lovesickgirls.jpg',
+                            rankChange: -2
                         },
                     ]
                 },
