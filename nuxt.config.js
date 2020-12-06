@@ -55,11 +55,16 @@ export default {
                 'faVolumeDown',
                 'faRecordVinyl',
                 'faChartLine',
-                'faLaugh'
+                'faLaugh',
+                'faMicrophone',
+                'faMusic'
             ],
             regular: [
                 'faThumbsUp',
                 'faThumbsDown',
+            ],
+            brands: [
+                'faYoutube'
             ]
         }
     }
