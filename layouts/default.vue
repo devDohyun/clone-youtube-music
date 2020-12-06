@@ -2,7 +2,7 @@
     <div id="app">
         <default-navigation></default-navigation>
         <transition name="fade">
-            <nuxt />
+            <nuxt :key="$route.fullPath" />
         </transition>
         <default-footer></default-footer>
     </div>
@@ -30,7 +30,7 @@
     }
 
     .fade-enter-active, .fade-leave-active {
-        transition: opacity 0.2s ease;
+        transition: opacity 0.3s ease;
     }
     .fade-enter, .fade-leave-active {
         opacity: 0;
