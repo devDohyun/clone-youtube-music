@@ -4,7 +4,7 @@
         <div class="nav-menu">
             <nuxt-link to="/" class="menu-item">홈</nuxt-link>
             <nuxt-link to="/explore" class="menu-item">둘러보기</nuxt-link>
-            <nuxt-link to="/library" class="menu-item">보관함</nuxt-link>
+            <nuxt-link to="/library" class="menu-item menu-library">보관함</nuxt-link>
             <div class="menu-item">검색</div>
         </div>
         <div class="profile-menu">
@@ -70,7 +70,8 @@
                 text-decoration: none;
                 cursor: pointer;
 
-                &.nuxt-link-exact-active {
+                &.nuxt-link-exact-active, 
+                &.menu-library.nuxt-link-active {
                     color: white;
                 }
             }
