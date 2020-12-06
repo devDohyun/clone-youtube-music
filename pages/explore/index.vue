@@ -15,33 +15,31 @@
                     분위기 및 장르
                 </div>
             </div>
-            <div class="content-item">
+            <section>
+                <div class="section-title">새 앨범 및 싱글</div>
+                <music-table :items="newItems"></music-table>
+            </section>
+            <section>
+                <div class="section-title">인기곡</div>
                 <music-table
-                    title="새 앨범 및 싱글"
-                    :items="newItems"
-                ></music-table>
-            </div>
-            <div class="content-item">
-                <music-table
-                    title="인기곡"
                     :items="hitItems"
                     direction="cloumn"
                     show-rank
                 ></music-table>
-            </div>
-            <div class="content-item">
+            </section>
+            <section>
+                <div class="section-title">분위기 및 장르</div>
                 <label-table
-                    title="분위기 및 장르"
                     :items="labels"
                 ></label-table>
-            </div>
-            <div class="content-item">
+            </section>
+            <section>
+                <div class="section-title">인기</div>
                 <music-table
-                    title="인기"
                     :items="rankItems"
                     direction="cloumn"
                 ></music-table>
-            </div>
+            </section>
         </div>
     </div>
 </template>
@@ -92,7 +90,7 @@
             }
         }
 
-        .content-item {
+        section {
             margin-top: 75px;
         }
     }
@@ -113,28 +111,36 @@ export default {
         return {
             newItems: [
                 {
-                    id: 0,
+                    id: 110,
                     type: 'music',
-                    title: '흔들리는 꽃들 속에서 네 샴푸향이 느껴진거야',
-                    desc: '노래 • 장범준',
-                    playtime: 168,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/흔들리는-꽃들-속에서-네-샴푸향이-느껴진거야.jpg'
+                    title: 'I CAN\'T STOP ME',
+                    desc: '싱글 • TWICE',
+                    playtime: 144,
+                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/icantstopme.jpg',
                 },
                 {
-                    id: 1,
+                    id: 210,
                     type: 'music',
-                    title: '스토커',
-                    desc: '노래 • 10cm(십센치)',
-                    playtime: 255,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/스토커.jpg'
+                    title: '혼술하고 싶은 밤',
+                    desc: 'EP • 벤',
+                    playtime: 144,
+                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/alcohol.jpg',
                 },
                 {
-                    id: 2,
+                    id: 212,
                     type: 'music',
-                    title: '길',
-                    desc: '노래 • 버스커버스커',
-                    playtime: 207,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/684015_1_f.jpg'
+                    title: '2528, 3544 (내 번호 아직 그대로야)',
+                    desc: '싱글 • 전건호 및 방태연',
+                    playtime: 144,
+                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/25283544.jpg',
+                },
+                {
+                    id: 213,
+                    type: 'music',
+                    title: '한 번에 알아본 사랑 (바른연애 길잡이 X 양요섭)',
+                    desc: '싱글 • 양요섭',
+                    playtime: 144,
+                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/hanbeon.jpg',
                 },
             ],
             hitItems: [
