@@ -1,7 +1,5 @@
 <template>
     <div class="label-table">
-        <div class="table-subtitle">{{ tableSubitle }}</div>
-        <div class="table-title">{{ tableTitle }}</div>
         <div class="table-items">
             <div
                 v-for="item in tableItems"
@@ -76,12 +74,6 @@
 <script>
 export default {
     props: {
-        subtitle: {
-
-        },
-        title: {
-            required: true
-        },
         items: {
             required: true,
             type: Array
@@ -89,8 +81,6 @@ export default {
     },
     data () {
         return {
-            tableSubitle: this.subtitle,
-            tableTitle: this.title,
             tableItems: this.items,
         }
     },

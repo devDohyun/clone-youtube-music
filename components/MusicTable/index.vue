@@ -1,7 +1,5 @@
 <template>
     <div class="music-table">
-        <div class="table-subtitle">{{ tableSubitle }}</div>
-        <div class="table-title">{{ tableTitle }}</div>
         <div v-if="direction === 'row'" class="table-items">
             <template v-for="(item, iIdx) in tableItems">
                 <album-item
@@ -35,31 +33,22 @@
 
 <style lang="scss" scoped>
     .music-table {
-        &:not(:last-child) {
-            margin-bottom: 125px;
+        margin-top: 25px;
+        margin-bottom: 125px;
 
-            @media (max-width: $media_md) {
-                margin-bottom: 100px;
-            }
-            @media (max-width: $media_sd) {
-                margin-bottom: 75px;
-            }
+        @media (max-width: $media_md) {
+            margin-top: 20px;
+            margin-bottom: 100px;
         }
-
-        .table-title {
-            margin-bottom: 50px;
-            
-            font-size: 38px;
-            font-weight: 700;
-            letter-spacing: 0.35px;
-
-            @media (max-width: $media_md) {
-                margin-bottom: 25px;
-                font-size: 24px;
-            }
+        @media (max-width: $media_sd) {
+            margin-top: 15px;
+            margin-bottom: 75px;
         }
-
+        
         .table-items {
+            margin: 0 -10px;
+            padding-bottom: 15px;
+
             white-space: nowrap;
             overflow-x: auto;
 
@@ -71,7 +60,7 @@
                 flex-direction: column;
                 flex-wrap: wrap;
 
-                height: ($music_column_height + $music_column_margin) * 4 + 20px;
+                height: ($music_column_height + $music_column_margin) * 4 + 40px;
                 
                 .music-item {
                     display: flex;
@@ -155,13 +144,6 @@ export default {
         AlbumItem
     },
     props: {
-        subtitle: {
-            type: String
-        },
-        title: {
-            required: true,
-            type: String
-        },
         items: {
             required: true,
             type: Array
