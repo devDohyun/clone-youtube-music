@@ -64,6 +64,11 @@
 
             padding-bottom: 50px;
 
+            @media (max-width: $media_sd) {
+                width: 100%;
+                height: auto;
+            }
+
             .current-music {
                 width: 100%;
                 max-width: 600px;
@@ -87,6 +92,11 @@
             max-width: 600px;
 
             padding-left: 50px;
+
+            @media (max-width: $media_sd) {
+                width: 100%;
+                padding-left: unset;
+            }
             
             .tap-wrapper {
                 button {

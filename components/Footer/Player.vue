@@ -171,6 +171,10 @@
                             white-space: nowrap;
                             overflow: hidden;
                             text-overflow: ellipsis;
+
+                            @media screen and (max-width: $media_sd) {
+                                max-width: 150px;
+                            }
                         }
                         .music-desc {
                             color: $color_gray5;

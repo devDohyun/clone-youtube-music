@@ -57,11 +57,17 @@ export default {
                 'faChartLine',
                 'faLaugh',
                 'faMicrophone',
-                'faMusic'
+                'faMusic',
+                'faHome',
+                'faCompass',
+                'faFileAudio',
+                'faSearch'
+
             ],
             regular: [
                 'faThumbsUp',
                 'faThumbsDown',
+                'faPlayCircle'
             ],
             brands: [
                 'faYoutube'

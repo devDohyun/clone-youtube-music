@@ -38,6 +38,9 @@
 
             margin: 0 ($menu_item_margin_x * -1);
 
+            white-space: nowrap;
+            overflow-x: auto;
+
             .menu-item {
                 display: inline-block;
 

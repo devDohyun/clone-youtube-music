@@ -1,11 +1,28 @@
 <template>
     <div id="navigation" :class="{ 'nav-background': navBackground }">
-        <nuxt-link to="/" class="logo"><div class="logo-youtube-music">Music</div></nuxt-link>
+        <nuxt-link to="/" class="logo">
+            <div class="logo-full">
+                <div class="logo-icon"><fa-icon :icon="['far', 'play-circle']"></fa-icon></div>
+                <div class="logo-text">Music</div>
+            </div>
+        </nuxt-link>
         <div class="nav-menu">
-            <nuxt-link to="/" class="menu-item">홈</nuxt-link>
-            <nuxt-link to="/explore" class="menu-item">둘러보기</nuxt-link>
-            <nuxt-link to="/library" class="menu-item menu-library">보관함</nuxt-link>
-            <div class="menu-item">검색</div>
+            <nuxt-link to="/" class="menu-item">
+                <div class="menu-icon"><fa-icon :icon="['fas', 'home']"></fa-icon></div>
+                <div class="menu-text">홈</div>
+            </nuxt-link>
+            <nuxt-link to="/explore" class="menu-item">
+                <div class="menu-icon"><fa-icon :icon="['fas', 'compass']"></fa-icon></div>
+                <div class="menu-text">둘러보기</div>
+            </nuxt-link>
+            <nuxt-link to="/library" class="menu-item menu-library">
+                <div class="menu-icon"><fa-icon :icon="['fas', 'file-audio']"></fa-icon></div>
+                <div class="menu-text">보관함</div>
+            </nuxt-link>
+            <div class="menu-item">
+                <div class="menu-icon"><fa-icon :icon="['fas', 'search']"></fa-icon></div>
+                <div class="menu-text">검색</div>
+            </div>
         </div>
         <div class="profile-menu">
             <button
@@ -39,6 +56,10 @@
         transition-duration: 0.3s;
         transition-timing-function: ease;
 
+        @media (max-width: $media_sd) {
+            padding: 0 25px;
+        }        
+
         &.nav-background {
             background-color: $color_gray2;
         }
@@ -46,18 +67,41 @@
         .logo {
             text-decoration: none;
             cursor: pointer;
-            .logo-youtube-music {
+
+            .logo-full {
                 color: white;
-                font-size: 24px;
-                font-weight: 600;
-                letter-spacing: -1.5px;
+
+                .logo-icon {
+                    vertical-align: middle;
+                    
+                    display: inline-block;
+
+                    width: 25px;
+                    height: 25px;
+                    
+                    font-size: 18px;
+
+                    background-color: red;
+                    border-radius: 50%;
+                    
+                    line-height: 27px;
+                }
+                .logo-text {
+                    vertical-align: middle;                    
+                    
+                    display: inline-block;
+                    font-size: 24px;
+                    font-weight: 600;
+                    letter-spacing: -1.5px;
+
+                    @media (max-width: $media_sd) {
+                        display: none;
+                    }
+                }
             }
         }
 
         .nav-menu {
-            @media (max-width: $media_sd) {
-                display: none;
-            }
             .menu-item {
                 display: inline-block;
 
@@ -73,6 +117,28 @@
                 &.nuxt-link-exact-active, 
                 &.menu-library.nuxt-link-active {
                     color: white;
+                }
+
+                .menu-text {
+                    vertical-align: middle;
+                    
+                    display: inline-block;
+                    
+                    @media (max-width: $media_sd) {
+                        display: none;
+                    }
+                }
+                .menu-icon {
+                    vertical-align: middle;
+                    
+                    display: inline-block;
+                    
+                    @media (max-width: $media_sd) {
+                        font-size: 20px;
+                    }
+                    @media (min-width: $media_sd) {
+                        display: none;
+                    }
                 }
             }
         }

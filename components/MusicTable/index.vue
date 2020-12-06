@@ -61,6 +61,8 @@
                 flex-wrap: wrap;
 
                 height: ($music_column_height + $music_column_margin) * 4 + 40px;
+
+                margin: unset;
                 
                 .music-item {
                     display: flex;
