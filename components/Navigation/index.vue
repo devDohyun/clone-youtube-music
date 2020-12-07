@@ -1,5 +1,5 @@
 <template>
-    <div id="navigation" :class="{ 'nav-background': navBackground }">
+    <div id="navigation" :class="{ 'nav-background': navBackground }" ref="nav">
         <nuxt-link to="/" class="logo">
             <div class="logo-full">
                 <div class="logo-icon"><fa-icon :icon="['far', 'play-circle']"></fa-icon></div>
@@ -181,7 +181,9 @@ export default {
             window.removeEventListener('scroll', this.scrollEventListener)
         },
         scrollEventListener () {
-            if (window.scrollY > 65) {
+            const targetHeight = this.$refs.nav.offsetHeight * 1.5
+            
+            if (window.scrollY > targetHeight) {
                 this.navBackground = true
             } else this.navBackground = false
         }
