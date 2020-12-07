@@ -109,176 +109,7 @@ export default {
     },
     data () {
         return {
-            newItems: [
-                {
-                    id: 110,
-                    type: 'music',
-                    title: 'I CAN\'T STOP ME',
-                    desc: '싱글 • TWICE',
-                    playtime: 144,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/icantstopme.jpg',
-                },
-                {
-                    id: 210,
-                    type: 'music',
-                    title: '혼술하고 싶은 밤',
-                    desc: 'EP • 벤',
-                    playtime: 144,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/alcohol.jpg',
-                },
-                {
-                    id: 212,
-                    type: 'music',
-                    title: '2528, 3544 (내 번호 아직 그대로야)',
-                    desc: '싱글 • 전건호 및 방태연',
-                    playtime: 144,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/25283544.jpg',
-                },
-                {
-                    id: 213,
-                    type: 'music',
-                    title: '한 번에 알아본 사랑 (바른연애 길잡이 X 양요섭)',
-                    desc: '싱글 • 양요섭',
-                    playtime: 144,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/hanbeon.jpg',
-                },
-            ],
-            hitItems: [
-                {
-                    id: 105,
-                    type: 'music',
-                    title: 'Life Goes On',
-                    desc: 'BTS (방탄소년단) • BE',
-                    playtime: 144,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/BTS_BE.jpg',
-                    rankChange: 3
-                },
-                {
-                    id: 106,
-                    type: 'music',
-                    title: 'Dynamite',
-                    desc: 'BTS (방탄소년단) • Dynamite (NightTime Version)',
-                    playtime: 144,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/600x600bb.jpg',
-                },
-                {
-                    id: 107,
-                    type: 'music',
-                    title: 'Black Mamba',
-                    desc: 'æspa • Black Mamba',
-                    playtime: 144,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/blackmamba.jpg',
-                    rankChange: 3
-                },
-                {
-                    id: 108,
-                    type: 'music',
-                    title: 'Lovesick Girls',
-                    desc: 'BLACKPINK • THE ALBUM',
-                    playtime: 144,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/lovesickgirls.jpg',
-                    rankChange: -2
-                },
-                {
-                    id: 109,
-                    type: 'music',
-                    title: '테스형!',
-                    desc: '나훈아 • 아홉 이야기',
-                    playtime: 144,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/ninestory.jpg',
-                },
-                {
-                    id: 110,
-                    type: 'music',
-                    title: 'I CAN\'T STOP ME',
-                    desc: 'TWICE • Eyes wide open',
-                    playtime: 144,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/icantstopme.jpg',
-                    rankChange: -2
-                },
-                {
-                    id: 111,
-                    type: 'music',
-                    title: 'HERO',
-                    desc: '임영웅 • HERO',
-                    playtime: 144,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/hero.jpg',
-                },
-                {
-                    id: 112,
-                    type: 'music',
-                    title: 'VVS(피처링: JUSTHIS)',
-                    desc: 'Miranni, Munchman, KI • Show Me the Money',
-                    playtime: 144,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/ShowMetheMoney9Episode1.jpg',
-                },
-                {
-                    id: 113,
-                    type: 'music',
-                    title: 'AYA',
-                    desc: '마마무(MAMAMOO) • TRAVEL',
-                    playtime: 144,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/aya.jpg',
-                },
-                {
-                    id: 114,
-                    type: 'music',
-                    title: 'Blue & Grey',
-                    desc: 'BTS • BE',
-                    playtime: 144,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/BTS_BE.jpg',
-                    rankChange: 1
-                },
-                {
-                    id: 115,
-                    type: 'music',
-                    title: 'MAGO',
-                    desc: '여자친구 (GFRIEND) • 回:Walpurgis Night',
-                    playtime: 144,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/walpurgisnight.jpg',
-                },
-                {
-                    id: 116,
-                    type: 'music',
-                    title: '잠이 오질 않네요',
-                    desc: '장범준 • 잠이 오질 않네요',
-                    playtime: 144,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/neversleep.jpg',
-                },
-                {
-                    id: 117,
-                    type: 'music',
-                    title: 'Fly To My Room',
-                    desc: 'BTS • BE',
-                    playtime: 144,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/BTS_BE.jpg',
-                },
-                {
-                    id: 118,
-                    type: 'music',
-                    title: 'When We Disco',
-                    desc: '박진영 및 선미 (SUNMI) • When We Disco',
-                    playtime: 144,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/whenwedisco.jpg',
-                    rankChange: -1
-                },
-                {
-                    id: 119,
-                    type: 'music',
-                    title: '취기를 빌려 (취향저격 그녀 X 산들)',
-                    desc: '산들 • 취기를 빌려 (취향저격 그녀 X 산들)',
-                    playtime: 144,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/취기를빌려.jpg',
-                },
-                {
-                    id: 120,
-                    type: 'music',
-                    title: 'How You Like That',
-                    desc: 'BLACKPINK • How You Like That',
-                    playtime: 144,
-                    thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/howyoulikethat.jpg',
-                },
-            ],
+            newItems: [],
             labels: [
                 {
                     id: 101,
@@ -400,13 +231,18 @@ export default {
                     title: '아프리카',
                     color: 'rgb(0, 165, 19)'
                 },
-            ]
+            ],
+            hitItems: []
         }
     },
     computed: {
         rankItems () {
             return [...this.hitItems].sort(() => Math.random() - 0.5)
         }
+    },
+    async mounted () {
+        this.newItems = this.$store.getters['api/getNewSongs']
+        this.hitItems = this.$store.getters['api/getHitSongs']
     }
 }
 </script>

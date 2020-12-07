@@ -1,7 +1,7 @@
 <template>
     <div class="music-table">
         <div v-if="direction === 'row'" class="table-items">
-            <template v-for="(item, iIdx) in tableItems">
+            <template v-for="(item, iIdx) in items">
                 <album-item
                     :key="iIdx"
                     :id="item.id"
@@ -14,7 +14,7 @@
             </template>
         </div>
         <div v-if="direction === 'cloumn'" class="table-items table-column">
-            <template v-for="(item, iIdx) in tableItems">
+            <template v-for="(item, iIdx) in items">
                 <div :key="iIdx" class="music-item">
                     <div :style="{'background-image': `url(${item.thumb})`}" class="music-thumb"></div>
                     <div class="music-meta">
@@ -153,13 +153,6 @@ export default {
         direction: {
             type: String,
             default: () => 'row'
-        }
-    },
-    data () {
-        return {
-            tableSubitle: this.subtitle,
-            tableTitle: this.title,
-            tableItems: this.items,
         }
     },
 }
