@@ -241,6 +241,8 @@ export default {
         }
     },
     async mounted () {
+        window.scrollTo(0, 0)
+        
         this.newItems = this.$store.getters['api/getNewSongs']
         this.hitItems = this.$store.getters['api/getHitSongs']
     }

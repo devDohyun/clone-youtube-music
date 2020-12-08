@@ -127,6 +127,9 @@ export default {
             result = result.concat(...this.tableList.slice(2, this.tableList.length))
             return result
         }
+    },
+    mounted () {
+        window.scrollTo(0, 0)
     }
 }
 </script>
