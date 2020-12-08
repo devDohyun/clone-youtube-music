@@ -19,7 +19,7 @@
                 <div class="menu-icon"><fa-icon :icon="['fas', 'file-audio']"></fa-icon></div>
                 <div class="menu-text">보관함</div>
             </nuxt-link>
-            <div class="menu-item">
+            <div class="menu-item menu-search">
                 <div class="menu-icon"><fa-icon :icon="['fas', 'search']"></fa-icon></div>
                 <div class="menu-text">검색</div>
             </div>
@@ -119,6 +119,17 @@
                     color: white;
                 }
 
+                &.menu-search {
+                    .menu-text {
+                        @media (max-width: $media_md) {
+                            display: none;
+                        }
+                    }
+                    .menu-icon {
+                        display: inline-block;
+                    }
+                }
+
                 .menu-text {
                     vertical-align: middle;
                     
@@ -132,9 +143,11 @@
                     vertical-align: middle;
                     
                     display: inline-block;
+
+                    font-size: 18px;
                     
                     @media (max-width: $media_sd) {
-                        font-size: 20px;
+                        font-size: 16px;
                     }
                     @media (min-width: $media_sd) {
                         display: none;
