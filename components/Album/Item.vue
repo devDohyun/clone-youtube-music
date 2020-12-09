@@ -48,7 +48,7 @@
             margin-bottom: 7.5px;
             padding-bottom: 100%;
 
-            background-color: $color_gray5;
+            background-color: $color_gray9;
             border-radius: 3px;
 
             background-repeat: no-repeat;
@@ -80,7 +80,7 @@
         .album-desc {
             font-size: 14px;
             white-space: nowrap;
-            color: $color_gray5;
+            color: $color_gray9;
         }
         .btn-play-music {
             z-index: 1;

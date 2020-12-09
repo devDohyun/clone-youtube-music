@@ -128,7 +128,7 @@
                         .music-desc {
                             font-size: 14px;
 
-                            color: $color_gray5;
+                            color: $color_gray9;
                         }
                     }
                 }

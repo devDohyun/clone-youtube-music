@@ -69,7 +69,7 @@
             }
             .text-desc {
                 font-size: 14px;
-                color: $color_gray5;
+                color: $color_gray9;
             }
             .actions {
                 margin-top: 50px;

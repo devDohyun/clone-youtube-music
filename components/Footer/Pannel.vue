@@ -183,7 +183,7 @@
                         width: calc(100% - 50px - 40px);
                         
                         font-size: 16px;
-                        color: $color_gray5;
+                        color: $color_gray9;
 
                         @media (max-width: $media_md) {
                             font-size: 14px;
@@ -210,7 +210,7 @@
 
                         width: 40px;
 
-                        color: $color_gray5;
+                        color: $color_gray9;
                         
                         text-align: right;
                         

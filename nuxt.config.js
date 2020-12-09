@@ -61,8 +61,9 @@ export default {
                 'faHome',
                 'faCompass',
                 'faFileAudio',
-                'faSearch'
-
+                'faSearch',
+                'faArrowLeft',
+                'faHistory'
             ],
             regular: [
                 'faThumbsUp',

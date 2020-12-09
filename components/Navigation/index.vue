@@ -19,7 +19,7 @@
                 <div class="menu-icon"><fa-icon :icon="['fas', 'file-audio']"></fa-icon></div>
                 <div class="menu-text">보관함</div>
             </nuxt-link>
-            <div class="menu-item menu-search">
+            <div @click="showSearchBox = true" class="menu-item menu-search">
                 <div class="menu-icon"><fa-icon :icon="['fas', 'search']"></fa-icon></div>
                 <div class="menu-text">검색</div>
             </div>
@@ -28,6 +28,23 @@
             <button
                 class="btn-profile"
             >D</button>
+        </div>
+        <div v-if="showSearchBox" class="search-box-wrapper">
+            <div class="search-box">
+                <button @click="showSearchBox = false" class="btn-close"><fa-icon :icon="['fas', 'arrow-left']"></fa-icon></button>
+                <input type="text" placeholder="검색">
+            </div>
+            <div class="list-box">
+                <div
+                    v-for="(li, liIdx) in searchList"
+                    :key="`${li.text}${liIdx}`"
+                    class="list-item"
+                >
+                    <fa-icon v-if="li.type === 'history'" :icon="['fas', 'history']" class="list-icon"></fa-icon>
+                    <fa-icon v-if="li.type === 'suggestion'" :icon="['fas', 'search']" class="list-icon"></fa-icon>
+                    <div class="list-text">{{ li.text }}</div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -177,13 +194,82 @@
             }
         }
     }
+
+    .search-box-wrapper {
+        position: fixed;
+
+        left: 50%;
+        top: 10px;
+        transform: translateX(-50%);
+
+        width: 95%;
+        max-width: 720px;
+
+        background-color: $color_gray2;
+
+        color: $color_gray8;
+
+        font-size: 16px;
+
+        .search-box {
+            display: flex;
+            align-items: center;
+
+            height: 48px;
+
+            .btn-close {
+                margin: 0 24px;
+
+                color: inherit;
+                font-size: inherit;
+
+                cursor: pointer;
+            }
+
+            input {
+                background-color: transparent;
+                border: none;
+
+                color: white;
+                font-size: 20px;
+                font-weight: 500;
+            }
+        }
+
+        .list-box {
+            .list-item {
+                display: flex;
+                align-items: center;
+
+                height: 48px;
+                
+                .list-icon {
+                    margin: 0 24px;
+                }
+                .list-text {
+                    display: inline-block;
+                }
+            }
+        }
+    }
 </style>
 
 <script>
 export default {
     data () {
         return {
-            navBackground: false
+            searchHistory: ['장범준', '10cm'],
+            searchSuggestion: [],
+            navBackground: false,
+            showSearchBox: false,
+        }
+    },
+    computed: {
+        searchList () {
+           return [
+               ...this.searchHistory.map(item => ({ text: item, type: 'history' })),
+               ...this.searchSuggestion.map(item => ({ text: item, type: 'suggestion' }))
+           ]
         }
     },
     methods: {

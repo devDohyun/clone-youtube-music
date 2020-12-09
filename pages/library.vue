@@ -47,7 +47,7 @@
                 margin: 0 $menu_item_margin_x;
                 padding: 16px 0;
 
-                color: $color_gray5;
+                color: $color_gray9;
                 font-size: 14px;
 
                 cursor: pointer;

@@ -34,7 +34,7 @@
 
                 margin-right: 50px;
 
-                background-color: $color_gray5;
+                background-color: $color_gray9;
                 border-radius: 5px;
             }
             .mix-info {
@@ -51,7 +51,7 @@
                 }
                 .mix-desc, .mix-summary {
                     font-size: 14px;
-                    color: $color_gray5;
+                    color: $color_gray9;
                 }
             }
             .mix-actions {
