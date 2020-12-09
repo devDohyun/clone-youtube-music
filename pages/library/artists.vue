@@ -18,7 +18,7 @@
 
         .no-item {
             text-align: center;
-            color: $color_gray3;
+            color: $color_gray4;
 
             .icon {
                 margin-bottom: 12px;
