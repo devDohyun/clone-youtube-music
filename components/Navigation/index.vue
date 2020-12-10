@@ -139,6 +139,7 @@
                 text-decoration: none;
                 cursor: pointer;
 
+                &:hover,
                 &.nuxt-link-exact-active, 
                 &.menu-library.nuxt-link-active {
                     color: white;
