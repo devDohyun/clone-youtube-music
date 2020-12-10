@@ -228,6 +228,7 @@
 
             .btn-close {
                 margin: 0 24px;
+                padding: unset;
 
                 color: inherit;
                 font-size: inherit;
@@ -236,7 +237,7 @@
             }
 
             input {
-                width: 100%;
+                width: calc(100% - 100px);
                 
                 background-color: transparent;
                 border: none;
