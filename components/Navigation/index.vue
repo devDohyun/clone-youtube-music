@@ -19,7 +19,7 @@
                 <div class="menu-icon"><fa-icon :icon="['fas', 'file-audio']"></fa-icon></div>
                 <div class="menu-text">보관함</div>
             </nuxt-link>
-            <div @click="showSearchBox = true" class="menu-item menu-search">
+            <div @click="handleSearchClick" class="menu-item menu-search">
                 <div class="menu-icon"><fa-icon :icon="['fas', 'search']"></fa-icon></div>
                 <div class="menu-text">검색</div>
             </div>
@@ -29,15 +29,23 @@
                 class="btn-profile"
             >D</button>
         </div>
-        <div v-if="showSearchBox" class="search-box-wrapper">
+        <div v-show="showSearchBox" class="search-box-wrapper">
             <div class="search-box">
                 <button @click="showSearchBox = false" class="btn-close"><fa-icon :icon="['fas', 'arrow-left']"></fa-icon></button>
-                <input type="text" placeholder="검색">
+                <input
+                    ref="searchBoxInput"
+                    v-model="searchKeyword"
+                    @keypress.enter="$event.target.blur(); enterSearch(searchKeyword)"
+                    @focus="showListbox = true"
+                    type="text"
+                    placeholder="검색"
+                >
             </div>
-            <div class="list-box">
+            <div v-show="showListbox" class="list-box">
                 <div
                     v-for="(li, liIdx) in searchList"
                     :key="`${li.text}${liIdx}`"
+                    @click="handleListClick(li.text)"
                     class="list-item"
                 >
                     <fa-icon v-if="li.type === 'history'" :icon="['fas', 'history']" class="list-icon"></fa-icon>
@@ -227,6 +235,8 @@
             }
 
             input {
+                width: 100%;
+                
                 background-color: transparent;
                 border: none;
 
@@ -242,6 +252,8 @@
                 align-items: center;
 
                 height: 48px;
+
+                cursor: pointer;
                 
                 .list-icon {
                     margin: 0 24px;
@@ -260,7 +272,9 @@ export default {
             searchHistory: ['장범준', '10cm'],
             searchSuggestion: [],
             navBackground: false,
+            showListbox: false,
             showSearchBox: false,
+            searchKeyword: ''
         }
     },
     computed: {
@@ -272,6 +286,14 @@ export default {
         }
     },
     methods: {
+        handleSearchClick () {
+            this.showSearchBox = true
+            this.$nextTick(() => this.$refs.searchBoxInput.focus())
+        },
+        handleListClick (text) {
+            this.searchKeyword = text
+            this.enterSearch(text)
+        },
         handleScrollEvent () {
             window.addEventListener('scroll', this.scrollEventListener)
         },
@@ -284,6 +306,16 @@ export default {
             if (window.scrollY > targetHeight) {
                 this.navBackground = true
             } else this.navBackground = false
+        },
+        enterSearch (keyword) {
+            this.$router.push({
+                path: '/search',
+                query: {
+                    q: keyword
+                }
+            })
+
+            this.showListbox = false
         }
     },
     mounted () {
