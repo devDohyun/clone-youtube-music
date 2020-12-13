@@ -186,7 +186,7 @@ export default {
             if (this.albumType === 'music') {
                 this.handlePlayClick()
             } else if (this.albumType === 'mix') {
-                const target = `/explore/mix/${this.albumId}`
+                const target = `/explore/playlist/${this.albumId}`
                 this.$router.push(target)
             }
         },
