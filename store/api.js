@@ -213,6 +213,7 @@ export const state = () => ({
 
 export const getters = {
     getAllMixes: state => state.mix,
+    getAllSongs: state => state.song,
     getNewSongs: state => state.song.filter(x => [110, 210, 212, 213].includes(x.id)),
     getHitSongs: state => state.song.filter(x => [105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120].includes(x.id)),
     getSongsById: state => (payload = []) => state.song.filter(x => payload.includes(x.id))
