@@ -324,7 +324,7 @@ export default {
             })
 
             this.showListbox = false
-            this.searchHistory = [keyword, ...this.searchHistory]
+            this.searchHistory = [keyword, ...this.searchHistory.filter(x => x !== keyword)]
         }
     },
     mounted () {
