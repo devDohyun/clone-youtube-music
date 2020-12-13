@@ -71,7 +71,7 @@
         
         width: 100%;
         height: 65px;
-        padding: 0 50px;
+        padding: 0 25px;
         
         background-color: transparent;
 
