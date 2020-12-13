@@ -28,3 +28,14 @@ button {
         font-size: 24px;
     }
 }
+
+.section-subtitle {
+    margin-bottom: 30px;
+    
+    font-size: 24px;
+    font-weight: 600;
+
+    @media (max-width: $media_ld) {
+        font-size: 20px;
+    }
+}

@@ -2,7 +2,7 @@
     <div id="page-library-playlists">
         <div class="page-container">
             <section>
-                <div class="section-title-sm">최근 활동</div>
+                <div class="section-subtitle">최근 활동</div>
                 <music-table :items="itemsRecent"></music-table>
             </section>
             <section>
@@ -22,15 +22,6 @@
 </template>
 <style lang="scss" scoped>
     #page-library-playlists {
-        .section-title-sm {
-            font-size: 24px;
-            font-weight: 600;
-
-            @media (max-width: $media_ld) {
-                font-size: 20px;
-            }
-        }
-
         .menu-wrapper {
             $menu_item_margin_x: 16px;
 
