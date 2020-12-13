@@ -10,7 +10,7 @@
                 >
                     <div :style="{ 'background-image': `url(${song.thumb})`}" class="result-thumb"></div>
                     <div class="result-text">
-                        <div class="result-title">{{ song.title }}</div>
+                        <div @click="playSongInPlaylist(song.id)" class="result-title">{{ song.title }}</div>
                         <div class="result-desc">{{ song.desc }} • {{ $common.formTimeString(song.playtime) }}</div>
                     </div>
                 </div>
@@ -46,6 +46,11 @@
 
                     .result-title {
                         margin-bottom: 4px;
+
+                        &:hover {
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
                     }
                     .result-desc {
                         color: $color_gray9;
@@ -70,6 +75,14 @@ export default {
         }),
         songsResult () {
             return this.getAllsongs.filter(x => x.title.includes(this.query) || x.desc.includes(this.query))
+        }
+    },
+    methods: {
+        async playSongInPlaylist (songId) {
+            const index = await this.$store.dispatch('player/addItemInPlaylistById', songId)
+            
+            this.$store.commit('player/setPlayIndex', index)
+            this.$store.dispatch('player/playMusic')
         }
     }
 }

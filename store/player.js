@@ -34,6 +34,13 @@ export const actions = {
 
         return state.playlist.length - 1
     },
+    addItemInPlaylistById: ({ commit, state, rootGetters }, payload) => {
+        const item = rootGetters['api/getAllSongs'].find(x => x.id === payload)
+
+        if (item) commit('addItemInPlaylist', item)
+
+        return state.playlist.length - 1
+    },
     playMusic: ({ commit, state, getters }) => {
         // check if playing
         if (getters.getIsPlaying) {
