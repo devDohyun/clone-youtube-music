@@ -13,7 +13,7 @@
                 </div>
             </template>
             <template v-else>
-                <section v-if="songsResult.legnth > 0">
+                <section v-if="songsResult.length > 0">
                     <div class="section-subtitle">노래</div>
                     <div class="section-result">
                         <div
