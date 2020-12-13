@@ -31,7 +31,7 @@
         </div>
         <div v-show="showSearchBox" class="search-box-wrapper">
             <div class="search-box">
-                <button @click="showSearchBox = false" class="btn-close"><fa-icon :icon="['fas', 'arrow-left']"></fa-icon></button>
+                <button @click="closeSearchBox" class="btn-close"><fa-icon :icon="['fas', 'arrow-left']"></fa-icon></button>
                 <input
                     ref="searchBoxInput"
                     v-model="searchKeyword"
@@ -290,6 +290,10 @@ export default {
         }
     },
     methods: {
+        closeSearchBox () {
+            this.showSearchBox = false
+            this.searchKeyword = ''
+        },
         handleSearchClick () {
             this.showSearchBox = true
             this.$nextTick(() => this.$refs.searchBoxInput.focus())
