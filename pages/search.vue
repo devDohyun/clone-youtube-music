@@ -73,11 +73,22 @@
                     margin-right: 16px;
 
                     background-position: center;
-                    background-size: contain;
+                    background-size: cover;
+                    background-repeat: no-repeat;
                 }
 
                 .result-text {
+                    flex: 1;
+
                     font-size: 14px;
+
+                    overflow: hidden;
+
+                    .result-title, .result-desc {
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
 
                     .result-title {
                         margin-bottom: 4px;
