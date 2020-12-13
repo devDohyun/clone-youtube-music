@@ -215,6 +215,7 @@
         max-width: 720px;
 
         background-color: $color_gray2;
+        border: 0.5px solid $color_gray3;
 
         color: $color_gray8;
 
@@ -225,6 +226,7 @@
             align-items: center;
 
             height: 48px;
+            border-bottom: 0.5px solid $color_gray3;
 
             .btn-close {
                 margin: 0 24px;
