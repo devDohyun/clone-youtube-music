@@ -324,6 +324,7 @@ export default {
             })
 
             this.showListbox = false
+            this.searchHistory = [keyword, ...this.searchHistory]
         }
     },
     mounted () {
