@@ -289,6 +289,11 @@ export default {
            ]
         }
     },
+    watch: {
+        '$route' (newValue) {
+            if (newValue.name !== 'search') this.closeSearchBox()
+        }
+    },
     methods: {
         closeSearchBox () {
             this.showSearchBox = false
