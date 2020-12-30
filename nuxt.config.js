@@ -63,7 +63,9 @@ export default {
                 'faFileAudio',
                 'faSearch',
                 'faArrowLeft',
-                'faHistory'
+                'faHistory',
+                'faAngleLeft',
+                'faAngleRight',
             ],
             regular: [
                 'faThumbsUp',

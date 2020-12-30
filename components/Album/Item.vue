@@ -31,13 +31,13 @@
         
         display: inline-block;
 
-        width: 225px;
+        width: $ui_album_item_height;
 
         margin-left: 10px;
         margin-right: 10px;
 
         @media (max-width: $media_ld) {
-            width: 180px;
+            width: $ui_album_item_height_ld;
         }
         
         .album-thumb {
