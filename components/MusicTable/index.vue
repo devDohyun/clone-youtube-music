@@ -55,7 +55,6 @@
         
         .table-items {
             margin: 0 -10px;
-            padding-bottom: 15px;
 
             white-space: nowrap;
             overflow-x: hidden;
@@ -71,7 +70,7 @@
                 flex-direction: column;
                 flex-wrap: wrap;
 
-                height: ($ui_album_item_column_height + $ui_album_item_column_margin) * 4 + 20px;
+                height: ($ui_album_item_column_height + $ui_album_item_column_margin) * 4;
 
                 margin: unset;
                 
@@ -167,7 +166,7 @@
             }
 
             &.offset-album-column {
-                top: ($ui_album_item_column_height + $ui_album_item_column_margin) * 2 - $ui_album_item_column_margin;
+                top: ($ui_album_item_column_height + $ui_album_item_column_margin) * 2 - ($ui_album_item_column_margin / 2);
             }
 
             &.btn-prev {
