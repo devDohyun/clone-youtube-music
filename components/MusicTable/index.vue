@@ -1,7 +1,7 @@
 <template>
     <div class="music-table">
-        <button v-show="showPrevButton" @click="handleScrollerClick('prev')" class="btn-scroller btn-prev"><fa-icon :icon="['fas', 'angle-left']"></fa-icon></button>
-        <button v-show="showNextButton" @click="handleScrollerClick('next')" class="btn-scroller btn-next"><fa-icon :icon="['fas', 'angle-right']"></fa-icon></button>
+        <ButtonScroller v-show="showPrevButton" @click.native="handleScrollerClick('prev')" direction="prev" :class="[direction === 'row' ? 'offset-album-row' : 'offset-album-column']"/>
+        <ButtonScroller v-show="showNextButton" @click.native="handleScrollerClick('next')" direction="next" :class="[direction === 'row' ? 'offset-album-row' : 'offset-album-column']"/>
         <template v-if="direction === 'row'">
             <div @scroll="handleTableItemsScroll" ref="tableItems" class="table-items">
                 <template v-for="(item, iIdx) in items">
@@ -67,14 +67,11 @@
             }
 
             &.table-column {
-                $music_column_height: 48px;
-                $music_column_margin: 16px;
-                
                 display: flex;
                 flex-direction: column;
                 flex-wrap: wrap;
 
-                height: ($music_column_height + $music_column_margin) * 4 + 40px;
+                height: ($ui_album_item_column_height + $ui_album_item_column_margin) * 4 + 20px;
 
                 margin: unset;
                 
@@ -83,10 +80,10 @@
                     align-items: center;
 
                     width: 420px;
-                    height: $music_column_height;
+                    height: $ui_album_item_column_height;
 
-                    margin-bottom: $music_column_margin;
-                    margin-right: $music_column_margin;
+                    margin-bottom: $ui_album_item_column_margin;
+                    margin-right: $ui_album_item_column_margin;
 
                     .music-thumb { 
                         width: 48px;
@@ -150,34 +147,27 @@
 
         }
 
-        .btn-scroller {
+        &::v-deep .btn-scroller {
             z-index: 5;
-            
+
             position: absolute;
-            top: $ui_album_item_height / 2;
+            top: 50%;
             transform: translateY(-50%);
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-            width: 40px;
-            height: 40px;
-
-            background-color: white;
-            box-shadow: rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px, rgba(0, 0, 0, 0.4) 0px 2px 4px -1px;
-
-            border-radius: 50%;
-
-            font-size: 24px;
-
-            cursor: pointer;
-
-            @media (max-width: $media_ld) {
-                top: $ui_album_item_height_ld / 2;
-            }
             @media (max-width: $media_sd) {
                 display: none;
+            }
+
+            &.offset-album-row {
+                top: $ui_album_item_height / 2;
+
+                @media (max-width: $media_ld) {
+                    top: $ui_album_item_height_ld / 2;
+                }
+            }
+
+            &.offset-album-column {
+                top: ($ui_album_item_column_height + $ui_album_item_column_margin) * 2 - $ui_album_item_column_margin;
             }
 
             &.btn-prev {
@@ -192,9 +182,11 @@
 
 <script>
 import AlbumItem from '@/components/Album/Item'
+import ButtonScroller from '@/components/Button/Scroller'
 
 export default {
     components: {
+        ButtonScroller,
         AlbumItem
     },
     props: {
