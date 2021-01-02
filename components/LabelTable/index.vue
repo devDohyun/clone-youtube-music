@@ -32,7 +32,7 @@
             flex-direction: column;
             flex-wrap: wrap;
 
-            height: ($label_height + $label_margin) * 4 + 15px;
+            height: ($label_height + $label_margin) * 4 - $label_margin;
             
             white-space: nowrap;
             overflow-x: hidden;
