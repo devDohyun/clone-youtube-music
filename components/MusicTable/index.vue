@@ -233,6 +233,9 @@ export default {
             element.scrollTo(target, 0)
         }
     },
+    mounted () {
+        this.handleTableItemsScroll()
+    },
     updated () {
         this.handleTableItemsScroll()
     }
