@@ -216,21 +216,21 @@ export default {
     methods: {
         handleTableItemsScroll () {
             const element = this.$refs.tableItems
-            const currentScroll = this.direction === 'row' ? element.scrollLeft : element.scrollTop
+            const currentScroll = element.scrollLeft
+            const offset = element.clientWidth
 
             this.showPrevButton = currentScroll > 300
-            this.showNextButton = element.scrollWidth > (currentScroll + element.clientWidth)
+            this.showNextButton = element.scrollWidth > (currentScroll + offset)
         },
         handleScrollerClick (dir = 'next') {
             const element = this.$refs.tableItems
-            const currentScroll = this.direction === 'row' ? element.scrollLeft : element.scrollTop
+            const currentScroll = element.scrollLeft
             const amount = 500
             let target = currentScroll + amount
 
             if (dir === 'prev') target = currentScroll - amount
 
-            if (this.direction === 'row') element.scrollTo(target, 0)
-            else element.scrollTo(0, target)
+            element.scrollTo(target, 0)
         }
     },
     mounted () {
