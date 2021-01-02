@@ -1,6 +1,8 @@
 <template>
     <div class="label-table">
-        <div class="table-items">
+        <ButtonScroller v-show="showPrevButton" @click.native="handleScrollerClick('prev')" direction="prev"/>
+        <ButtonScroller v-show="showNextButton" @click.native="handleScrollerClick('next')" direction="next"/>
+        <div @scroll="handleTableItemsScroll" ref="tableItems" class="table-items">
             <div
                 v-for="item in tableItems"
                 :key="item.id"
@@ -18,21 +20,11 @@
     $label_margin: 16px;
 
     .label-table {
+        position: relative;
+
+
         &:not(:last-child) {
             margin-bottom: 125px;
-        }
-
-        .table-title {
-            margin-bottom: 50px;
-            
-            font-size: 38px;
-            font-weight: 700;
-            letter-spacing: 0.35px;
-
-            @media (max-width: $media_md) {
-                margin-bottom: 25px;
-                font-size: 24px;
-            }
         }
 
         .table-items {
@@ -43,7 +35,9 @@
             height: ($label_height + $label_margin) * 4 + 15px;
             
             white-space: nowrap;
-            overflow-x: auto;
+            overflow-x: hidden;
+
+            scroll-behavior: smooth;
 
             .label-item {
                 display: flex;
@@ -68,11 +62,35 @@
                 }
             }
         }
+
+        &::v-deep .btn-scroller {
+            z-index: 5;
+
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @media (max-width: $media_sd) {
+                display: none;
+            }
+
+            &.btn-prev {
+                left: calc(-10px + -20px);
+            }
+            &.btn-next {
+                right: calc(-10px + -20px);
+            }
+        }
     }
 </style>
 
 <script>
+import ButtonScroller from '@/components/Button/Scroller'
+
 export default {
+    components: {
+        ButtonScroller
+    },
     props: {
         items: {
             required: true,
@@ -82,7 +100,35 @@ export default {
     data () {
         return {
             tableItems: this.items,
+            showPrevButton: false,
+            showNextButton: false,
         }
     },
+    methods: {
+        handleTableItemsScroll () {
+            const element = this.$refs.tableItems
+            const currentScroll = element.scrollLeft
+            const offset = element.clientWidth
+
+            this.showPrevButton = currentScroll > 300
+            this.showNextButton = element.scrollWidth > (currentScroll + offset)
+        },
+        handleScrollerClick (dir = 'next') {
+            const element = this.$refs.tableItems
+            const currentScroll = element.scrollLeft
+            const amount = 500
+            let target = currentScroll + amount
+
+            if (dir === 'prev') target = currentScroll - amount
+
+            element.scrollTo(target, 0)
+        }
+    },
+    mounted () {
+        this.handleTableItemsScroll()
+    },
+    updated () {
+        this.handleTableItemsScroll()
+    }
 }
 </script>
