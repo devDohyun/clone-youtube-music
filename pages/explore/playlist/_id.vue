@@ -1,37 +1,37 @@
 <template>
   <div id="page-explore-mix-id">
-    <template v-if="error">
-      <div class="pannel">
-        {{ error.message }}
-      </div>
-    </template>
-    <template v-else-if="loading">
-      <div class="pannel">
-        <Spinner />
-      </div>
-    </template>
-    <template v-else>
-      <div class="pannel-mix">
-        <div class="mix-wrapper">
-          <div class="mix-thumb" :style="{ 'background-image': `url(${item.thumb})` }"></div>
-          <div class="mix-info">
-            <div class="mix-title">{{ item.title }}</div>
-            <div class="mix-desc">{{ item.desc }}</div>
-            <div class="mix-summary">{{ item.summary }}</div>
-            <div class="mix-actions">
-              <button type="button">셔플</button>
-              <button type="button">보관함에 추가</button>
+    <div class="page-container">
+      <template v-if="error">
+        <div class="pannel">
+          {{ error.message }}
+        </div>
+      </template>
+      <template v-else-if="loading">
+        <div class="pannel">
+          <Spinner />
+        </div>
+      </template>
+      <template v-else>
+        <div class="pannel-mix">
+          <div class="mix-wrapper">
+            <div class="mix-thumb" :style="{ 'background-image': `url(${item.thumb})` }"></div>
+            <div class="mix-info">
+              <div class="mix-title">{{ item.title }}</div>
+              <div class="mix-desc">{{ item.desc }}</div>
+              <div class="mix-summary">{{ item.summary }}</div>
+              <div class="mix-actions">
+                <button type="button"><fa-icon :icon="['fas', 'random']" /> 셔플</button>
+                <button type="button"><fa-icon :icon="['fas', 'plus-square']" /> 보관함에 추가</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </template>
+      </template>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
 #page-explore-mix-id {
-  padding-top: 50px;
-
   .pannel {
     display: flex;
 
@@ -42,20 +42,11 @@
     height: 100vh;
   }
   .pannel-mix {
-    $pannel_padding: 50px;
-
-    padding: $pannel_padding;
-
-    @media (max-width: $media_md) {
-      $pannel_padding: 20px;
-
-      padding: $pannel_padding;
-    }
-
     .mix-wrapper {
       position: relative;
 
       display: flex;
+      align-items: center;
 
       @media (max-width: $media_md) {
         padding-bottom: 75px;
