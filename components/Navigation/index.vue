@@ -1,5 +1,5 @@
 <template>
-  <div id="navigation" :class="{ 'nav-background': navBackground }" ref="nav">
+  <div id="navigation" ref="nav">
     <nuxt-link to="/" class="logo">
       <div class="logo-full">
         <div class="logo-icon"><fa-icon :icon="['far', 'play-circle']"></fa-icon></div>
@@ -69,7 +69,7 @@
   height: 65px;
   padding: 0 25px;
 
-  background-color: transparent;
+  background-color: #000000;
 
   text-align: center;
 
@@ -79,10 +79,6 @@
 
   @media (max-width: $media_sd) {
     padding: 0 25px;
-  }
-
-  &.nav-background {
-    background-color: #000000;
   }
 
   .logo {
@@ -126,12 +122,12 @@
     .menu-item {
       display: inline-block;
 
-      margin-left: 12.5px;
-      margin-right: 12.5px;
+      margin-left: 20px;
+      margin-right: 20px;
 
-      font-size: 22px;
+      font-size: 20px;
       color: #999;
-      font-weight: 500;
+      font-weight: normal;
       text-decoration: none;
       cursor: pointer;
 
@@ -149,6 +145,7 @@
         }
         .menu-icon {
           display: inline-block;
+          margin-right: 15px;
         }
       }
 
@@ -271,7 +268,6 @@ export default {
     return {
       searchHistory: ['장범준', '10cm'],
       searchSuggestion: [],
-      navBackground: false,
       showListbox: false,
       showSearchBox: false,
       searchKeyword: '',
@@ -300,19 +296,6 @@ export default {
       this.searchKeyword = text
       this.enterSearch(text)
     },
-    handleScrollEvent() {
-      window.addEventListener('scroll', this.scrollEventListener)
-    },
-    removeScrollEvent() {
-      window.removeEventListener('scroll', this.scrollEventListener)
-    },
-    scrollEventListener() {
-      const targetHeight = this.$refs.nav.offsetHeight * 1.25
-
-      if (window.scrollY > targetHeight) {
-        this.navBackground = true
-      } else this.navBackground = false
-    },
     enterSearch(keyword) {
       this.$router.push({
         path: '/search',
@@ -324,18 +307,6 @@ export default {
       this.showListbox = false
       this.searchHistory = [keyword, ...this.searchHistory.filter((x) => x !== keyword)]
     },
-  },
-  mounted() {
-    this.handleScrollEvent()
-    this.$root.$on('nav-set-background', () => {
-      this.navBackground = true
-    })
-    this.$root.$on('nav-set-transparent', () => {
-      this.navBackground = false
-    })
-  },
-  beforeDestroy() {
-    this.removeScrollEvent()
   },
 }
 </script>
