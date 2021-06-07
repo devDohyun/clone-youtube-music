@@ -30,6 +30,8 @@
 </template>
 <style lang="scss" scoped>
 #page-explore-mix-id {
+  padding-top: 50px;
+
   .pannel {
     display: flex;
 
@@ -40,80 +42,101 @@
     height: 100vh;
   }
   .pannel-mix {
-    $pannel_left_padding: 50px;
+    $pannel_padding: 50px;
 
-    position: relative;
-    padding: 100px $pannel_left_padding 50px 50px;
-
-    font-size: 0;
+    padding: $pannel_padding;
 
     @media (max-width: $media_md) {
-      padding-bottom: 100px;
+      $pannel_padding: 20px;
+
+      padding: $pannel_padding;
     }
 
-    .mix-thumb {
-      vertical-align: middle;
+    .mix-wrapper {
+      position: relative;
 
-      display: inline-block;
+      display: flex;
 
-      width: 33%;
-      max-width: 240px;
-
-      margin-right: 50px;
-
-      background-color: $color_gray9;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-
-      border-radius: 5px;
-
-      &::after {
-        content: ' ';
-        display: block;
-        padding-bottom: 100%;
+      @media (max-width: $media_md) {
+        padding-bottom: 75px;
       }
-    }
-    .mix-info {
-      vertical-align: middle;
 
-      display: inline-block;
-      width: calc(100% - 290px);
+      .mix-thumb {
+        flex-shrink: 0;
 
-      .mix-title {
-        margin-bottom: 20px;
+        width: 33%;
+        max-width: 240px;
 
-        font-size: 28px;
-        font-weight: 700;
-      }
-      .mix-desc,
-      .mix-summary {
-        font-size: 14px;
-        color: $color_gray9;
-      }
-      .mix-actions {
-        margin-top: 50px;
+        margin-right: 50px;
+
+        background-color: $color_gray9;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        border-radius: 5px;
 
         @media (max-width: $media_md) {
-          position: absolute;
-          left: $pannel_left_padding;
-          bottom: $pannel_left_padding / 2;
+          width: 150px;
+
+          margin-right: 15px;
         }
 
-        button {
-          padding: 7.5px 15px;
+        &::after {
+          content: ' ';
+          display: block;
+          padding-bottom: 100%;
+        }
+      }
+      .mix-info {
+        flex-grow: 1;
 
+        .mix-title {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+
+          margin-bottom: 20px;
+
+          font-size: 28px;
+          font-weight: 700;
+
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          @media (max-width: $media_md) {
+            font-size: 24px;
+          }
+        }
+        .mix-desc,
+        .mix-summary {
           font-size: 14px;
-          border: 1px solid white;
+          color: $color_gray9;
+        }
+        .mix-actions {
+          margin-top: 50px;
 
-          &:not(:last-of-type) {
-            margin-right: 15px;
+          @media (max-width: $media_md) {
+            position: absolute;
+            left: 0;
+            bottom: 0;
           }
-          &:nth-of-type(1) {
-            background-color: white;
-          }
-          &:nth-of-type(2) {
-            color: white;
+
+          button {
+            padding: 7.5px 15px;
+
+            font-size: 14px;
+            border: 1px solid white;
+
+            &:not(:last-of-type) {
+              margin-right: 15px;
+            }
+            &:nth-of-type(1) {
+              background-color: white;
+            }
+            &:nth-of-type(2) {
+              color: white;
+            }
           }
         }
       }

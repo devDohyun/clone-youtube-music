@@ -131,6 +131,11 @@
       text-decoration: none;
       cursor: pointer;
 
+      @media (max-width: $media_md) {
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+
       &:hover,
       &.nuxt-link-exact-active,
       &.menu-library.nuxt-link-active {
@@ -146,6 +151,10 @@
         .menu-icon {
           display: inline-block;
           margin-right: 15px;
+
+          @media (max-width: $media_md) {
+            margin-right: unset;
+          }
         }
       }
 
