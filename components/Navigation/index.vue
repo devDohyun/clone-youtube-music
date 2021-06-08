@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class="profile-menu">
-      <button class="btn-profile">D</button>
+      <button class="btn-profile" type="button"><UserAvatar nickname="D" /></button>
     </div>
     <div v-show="showSearchBox" class="search-box-wrapper">
       <div class="search-box">
@@ -186,20 +186,12 @@
 
   .profile-menu {
     .btn-profile {
-      display: inline-block;
-
-      width: 27.5px;
-      height: 27.5px;
-
-      padding: 5px;
-      background-color: deepskyblue;
+      padding: unset;
 
       outline: none;
       border: none;
-      border-radius: 50%;
 
-      color: white;
-      font-weight: 500;
+      background: none;
 
       cursor: pointer;
     }
@@ -272,7 +264,10 @@
 }
 </style>
 <script>
+import UserAvatar from '@/components/User/Avatar'
+
 export default {
+  components: { UserAvatar },
   data() {
     return {
       searchHistory: ['장범준', '10cm'],
