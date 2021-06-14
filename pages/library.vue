@@ -50,6 +50,8 @@
     }
   }
   .menu-child {
+    padding-bottom: 100px;
+
     border-top: 1px solid $color_gray2;
   }
 }
@@ -94,8 +96,6 @@ export default {
       ],
     }
   },
-  mounted() {
-    window.scrollTo(0, 0)
-  },
+  mounted() {},
 }
 </script>
