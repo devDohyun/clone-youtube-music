@@ -60,6 +60,11 @@
 import MusicTable from '@/components/MusicTable'
 
 export default {
+  head() {
+    return {
+      title: '보관함',
+    }
+  },
   middleware({ route, redirect }) {
     if (route.fullPath === '/library') return redirect(`/library/playlists`)
   },

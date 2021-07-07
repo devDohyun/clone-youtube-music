@@ -139,6 +139,11 @@
 import Spinner from '@/components/Spinner'
 
 export default {
+  head() {
+    return {
+      title: '믹스',
+    }
+  },
   components: { Spinner },
   data() {
     return {
