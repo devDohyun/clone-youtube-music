@@ -80,7 +80,7 @@ export default {
           title: '혼술하고 싶은 밤',
           desc: 'EP • 벤',
           playtime: 144,
-          thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/alcohol.jpg',
+          thumb: 'https://kr.object.ncloudstorage.com/dev-dohyun/clone-youtube-music/images/album/alcohol.jpg',
         },
         {
           id: 220,
@@ -88,7 +88,7 @@ export default {
           title: 'Perfect',
           desc: '노래 • 10cm(십센치)',
           playtime: 144,
-          thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/Love%20Playlist3-1.jpg',
+          thumb: 'https://kr.object.ncloudstorage.com/dev-dohyun/clone-youtube-music/images/album/Love%20Playlist3-1.jpg',
         },
         {
           id: 0,
@@ -96,7 +96,7 @@ export default {
           title: '흔들리는 꽃들 속에서 네 샴푸향이 느껴진거야',
           desc: '노래 • 장범준',
           playtime: 168,
-          thumb: 'https://storage.googleapis.com/clone-youtube-music/images/album/흔들리는-꽃들-속에서-네-샴푸향이-느껴진거야.jpg',
+          thumb: 'https://kr.object.ncloudstorage.com/dev-dohyun/clone-youtube-music/images/album/흔들리는-꽃들-속에서-네-샴푸향이-느껴진거야.jpg',
         },
       ],
     }
