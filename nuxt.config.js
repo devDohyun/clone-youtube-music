@@ -3,7 +3,9 @@ require('dotenv').config({ path: '.env' })
 export default {
   ssr: false,
   target: 'static',
-
+  generate: {
+    fallback: true,
+  },
   server: {
     host: process.env.SERVER_HOST || 'localhost',
     port: process.env.SERVER_PORT || 8000,
