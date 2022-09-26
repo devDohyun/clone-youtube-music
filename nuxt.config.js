@@ -3,7 +3,7 @@ require('dotenv').config({ path: '.env' })
 export default {
   server: {
     host: process.env.SERVER_HOST || 'localhost',
-    port: process.env.SERVER_PORT || 80,
+    port: process.env.SERVER_PORT || 8000,
   },
   env: {
     NAME: process.env.NAME,
